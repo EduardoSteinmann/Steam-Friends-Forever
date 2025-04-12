@@ -1,0 +1,1 @@
+  -L"C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib"  -llibcurl -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

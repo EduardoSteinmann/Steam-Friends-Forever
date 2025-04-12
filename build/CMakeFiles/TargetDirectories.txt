@@ -1,0 +1,3 @@
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/build/CMakeFiles/main.dir
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/build/CMakeFiles/edit_cache.dir
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/build/CMakeFiles/rebuild_cache.dir
