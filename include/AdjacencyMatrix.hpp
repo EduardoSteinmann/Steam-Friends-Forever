@@ -9,11 +9,11 @@
 class AdjacencyMatrix
 {
     public:
-    void insert_user(uint64_t user_id);
+    void insert_user(uint64_t user_id,std::vector<SteamUser> friends);
        
     private:
     size_t user_count;
-    std::unordered_map<SteamUser, size_t> index_graph;
+    std::unordered_map<uint64_t, size_t> index_graph;
     std::vector<std::vector<bool>> adj_matrix;
 };
 
