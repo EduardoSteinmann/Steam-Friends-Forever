@@ -1,9 +1,9 @@
 #include <iostream>
-//#include "Steam.hpp"
+#include "Steam.hpp"
 
 int main()
 {
     std::cout << "Hello";
-    //Steam::init();
+    Steam::init();
     return 0;
 }
