@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/AdjacencyList.cpp.obj.d"
   "CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj"
   "CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj.d"
-  "CMakeFiles/main.dir/src/Game.cpp.obj"
-  "CMakeFiles/main.dir/src/Game.cpp.obj.d"
   "CMakeFiles/main.dir/src/Steam.cpp.obj"
   "CMakeFiles/main.dir/src/Steam.cpp.obj.d"
   "CMakeFiles/main.dir/src/main.cpp.obj"

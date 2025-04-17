@@ -83,26 +83,11 @@ CMakeFiles/main.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/main.cpp.s"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\src\main.cpp -o CMakeFiles\main.dir\src\main.cpp.s
 
-CMakeFiles/main.dir/src/Game.cpp.obj: CMakeFiles/main.dir/flags.make
-CMakeFiles/main.dir/src/Game.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
-CMakeFiles/main.dir/src/Game.cpp.obj: C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/Game.cpp
-CMakeFiles/main.dir/src/Game.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/Game.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Game.cpp.obj -MF CMakeFiles\main.dir\src\Game.cpp.obj.d -o CMakeFiles\main.dir\src\Game.cpp.obj -c C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\src\Game.cpp
-
-CMakeFiles/main.dir/src/Game.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/main.dir/src/Game.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\src\Game.cpp > CMakeFiles\main.dir\src\Game.cpp.i
-
-CMakeFiles/main.dir/src/Game.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/Game.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\src\Game.cpp -o CMakeFiles\main.dir\src\Game.cpp.s
-
 CMakeFiles/main.dir/src/Steam.cpp.obj: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/Steam.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
 CMakeFiles/main.dir/src/Steam.cpp.obj: C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/Steam.cpp
 CMakeFiles/main.dir/src/Steam.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/Steam.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/main.dir/src/Steam.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/Steam.cpp.obj -MF CMakeFiles\main.dir\src\Steam.cpp.obj.d -o CMakeFiles\main.dir\src\Steam.cpp.obj -c C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\src\Steam.cpp
 
 CMakeFiles/main.dir/src/Steam.cpp.i: cmake_force
@@ -117,7 +102,7 @@ CMakeFiles/main.dir/src/AdjacencyList.cpp.obj: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/AdjacencyList.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
 CMakeFiles/main.dir/src/AdjacencyList.cpp.obj: C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/AdjacencyList.cpp
 CMakeFiles/main.dir/src/AdjacencyList.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/AdjacencyList.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/main.dir/src/AdjacencyList.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/AdjacencyList.cpp.obj -MF CMakeFiles\main.dir\src\AdjacencyList.cpp.obj.d -o CMakeFiles\main.dir\src\AdjacencyList.cpp.obj -c C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\src\AdjacencyList.cpp
 
 CMakeFiles/main.dir/src/AdjacencyList.cpp.i: cmake_force
@@ -132,7 +117,7 @@ CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj: CMakeFiles/main.dir/includes_CXX.rsp
 CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj: C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/AdjacencyMatrix.cpp
 CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj: CMakeFiles/main.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj -MF CMakeFiles\main.dir\src\AdjacencyMatrix.cpp.obj.d -o CMakeFiles\main.dir\src\AdjacencyMatrix.cpp.obj -c C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\src\AdjacencyMatrix.cpp
 
 CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.i: cmake_force
@@ -146,7 +131,6 @@ CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.s: cmake_force
 # Object files for target main
 main_OBJECTS = \
 "CMakeFiles/main.dir/src/main.cpp.obj" \
-"CMakeFiles/main.dir/src/Game.cpp.obj" \
 "CMakeFiles/main.dir/src/Steam.cpp.obj" \
 "CMakeFiles/main.dir/src/AdjacencyList.cpp.obj" \
 "CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj"
@@ -155,7 +139,6 @@ main_OBJECTS = \
 main_EXTERNAL_OBJECTS =
 
 main.exe: CMakeFiles/main.dir/src/main.cpp.obj
-main.exe: CMakeFiles/main.dir/src/Game.cpp.obj
 main.exe: CMakeFiles/main.dir/src/Steam.cpp.obj
 main.exe: CMakeFiles/main.dir/src/AdjacencyList.cpp.obj
 main.exe: CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj
@@ -163,7 +146,7 @@ main.exe: CMakeFiles/main.dir/build.make
 main.exe: CMakeFiles/main.dir/linkLibs.rsp
 main.exe: CMakeFiles/main.dir/objects1.rsp
 main.exe: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable main.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable main.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\main.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

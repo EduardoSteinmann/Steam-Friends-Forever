@@ -11,7 +11,6 @@ void AdjacencyMatrix::insert_user(uint64_t user_id,std::vector<SteamUser> friend
     //updates the size of all older rows 
     if(index_graph.find(user_id)==index_graph.end())
     {
-        
         index_graph[user_id]=adj_matrix.size();
         adj_matrix.emplace_back(std::vector<bool>{});
         adj_matrix[adj_matrix.size()-1].resize(adj_matrix[adj_matrix.size()-1].size());

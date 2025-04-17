@@ -9,7 +9,6 @@ struct SteamUser
 {
     uint64_t user_id;
     std::string user_persona;
-    
 };
 
 #endif

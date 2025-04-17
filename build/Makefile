@@ -176,30 +176,6 @@ src/AdjacencyMatrix.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.s
 .PHONY : src/AdjacencyMatrix.cpp.s
 
-src/Game.obj: src/Game.cpp.obj
-.PHONY : src/Game.obj
-
-# target to build an object file
-src/Game.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/Game.cpp.obj
-.PHONY : src/Game.cpp.obj
-
-src/Game.i: src/Game.cpp.i
-.PHONY : src/Game.i
-
-# target to preprocess a source file
-src/Game.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/Game.cpp.i
-.PHONY : src/Game.cpp.i
-
-src/Game.s: src/Game.cpp.s
-.PHONY : src/Game.s
-
-# target to generate assembly for a file
-src/Game.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/Game.cpp.s
-.PHONY : src/Game.cpp.s
-
 src/Steam.obj: src/Steam.cpp.obj
 .PHONY : src/Steam.obj
 
@@ -263,9 +239,6 @@ help:
 	@echo ... src/AdjacencyMatrix.obj
 	@echo ... src/AdjacencyMatrix.i
 	@echo ... src/AdjacencyMatrix.s
-	@echo ... src/Game.obj
-	@echo ... src/Game.i
-	@echo ... src/Game.s
 	@echo ... src/Steam.obj
 	@echo ... src/Steam.i
 	@echo ... src/Steam.s

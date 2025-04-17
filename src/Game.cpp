@@ -31,7 +31,7 @@ int Game::getId() {
 
 void readGameCSV(std::string path) {
 
-    //TODO multithread this
+  //TODO multithread this
   rapidcsv::Document doc("../archive/games.csv");
   std::vector<std::string> appIDs = doc.GetColumn<std::string>("AppID");
   std::vector<std::string> names = doc.GetColumn<std::string>("Name");
@@ -56,7 +56,7 @@ void readGameCSV(std::string path) {
       //TODO make it so F2P and similar tags do not apply
       std::string eachTag=gameTags.substr(0, gameTags.find(","));
       gameTags=gameTags.substr(gameTags.find(",")+1);
-      if (gameTags.find(",")==string::npos) {
+      if (gameTags.find(",")== std::string::npos) {
         std::string eachTag=gameTags;
         gameTags="";
 
