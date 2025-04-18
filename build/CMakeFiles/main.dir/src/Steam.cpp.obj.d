@@ -385,13 +385,32 @@ CMakeFiles/main.dir/src/Steam.cpp.obj: \
  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/curl/websockets.h \
  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/curl/mprintf.h \
  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/SteamUser.hpp \
- C:/mingw64/include/c++/14.2.0/fstream \
- C:/mingw64/include/c++/14.2.0/istream C:/mingw64/include/c++/14.2.0/ios \
- C:/mingw64/include/c++/14.2.0/exception \
- C:/mingw64/include/c++/14.2.0/bits/exception_ptr.h \
- C:/mingw64/include/c++/14.2.0/bits/cxxabi_init_exception.h \
+ C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/json.hpp \
+ C:/mingw64/include/c++/14.2.0/algorithm \
+ C:/mingw64/include/c++/14.2.0/bits/stl_algo.h \
+ C:/mingw64/include/c++/14.2.0/bits/algorithmfwd.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_heap.h \
+ C:/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h \
+ C:/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h \
+ C:/mingw64/include/c++/14.2.0/pstl/execution_defs.h \
+ C:/mingw64/include/c++/14.2.0/functional \
+ C:/mingw64/include/c++/14.2.0/bits/std_function.h \
  C:/mingw64/include/c++/14.2.0/typeinfo \
- C:/mingw64/include/c++/14.2.0/bits/nested_exception.h \
+ C:/mingw64/include/c++/14.2.0/unordered_map \
+ C:/mingw64/include/c++/14.2.0/bits/unordered_map.h \
+ C:/mingw64/include/c++/14.2.0/bits/hashtable.h \
+ C:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
+ C:/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
+ C:/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
+ C:/mingw64/include/c++/14.2.0/bits/node_handle.h \
+ C:/mingw64/include/c++/14.2.0/bits/erase_if.h \
+ C:/mingw64/include/c++/14.2.0/array \
+ C:/mingw64/include/c++/14.2.0/compare \
+ C:/mingw64/include/c++/14.2.0/iterator \
+ C:/mingw64/include/c++/14.2.0/bits/stream_iterator.h \
+ C:/mingw64/include/c++/14.2.0/bits/streambuf_iterator.h \
+ C:/mingw64/include/c++/14.2.0/streambuf \
  C:/mingw64/include/c++/14.2.0/bits/ios_base.h \
  C:/mingw64/include/c++/14.2.0/ext/atomicity.h \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h \
@@ -409,21 +428,101 @@ CMakeFiles/main.dir/src/Steam.cpp.obj: \
  C:/mingw64/include/c++/14.2.0/system_error \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h \
  C:/mingw64/include/c++/14.2.0/stdexcept \
- C:/mingw64/include/c++/14.2.0/streambuf \
+ C:/mingw64/include/c++/14.2.0/exception \
+ C:/mingw64/include/c++/14.2.0/bits/exception_ptr.h \
+ C:/mingw64/include/c++/14.2.0/bits/cxxabi_init_exception.h \
+ C:/mingw64/include/c++/14.2.0/bits/nested_exception.h \
  C:/mingw64/include/c++/14.2.0/bits/streambuf.tcc \
- C:/mingw64/include/c++/14.2.0/bits/basic_ios.h \
+ C:/mingw64/include/c++/14.2.0/memory \
+ C:/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h \
+ C:/mingw64/include/c++/14.2.0/bits/align.h \
+ C:/mingw64/include/c++/14.2.0/bits/unique_ptr.h \
+ C:/mingw64/include/c++/14.2.0/bits/shared_ptr.h \
+ C:/mingw64/include/c++/14.2.0/bits/shared_ptr_base.h \
+ C:/mingw64/include/c++/14.2.0/bits/allocated_ptr.h \
+ C:/mingw64/include/c++/14.2.0/ext/concurrence.h \
+ C:/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h \
+ C:/mingw64/include/c++/14.2.0/bits/atomic_base.h \
+ C:/mingw64/include/c++/14.2.0/bits/atomic_lockfree_defines.h \
+ C:/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
+ C:/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
+ C:/mingw64/include/c++/14.2.0/utility \
+ C:/mingw64/include/c++/14.2.0/bits/stl_relops.h \
+ C:/mingw64/include/c++/14.2.0/forward_list \
+ C:/mingw64/include/c++/14.2.0/bits/forward_list.h \
+ C:/mingw64/include/c++/14.2.0/bits/forward_list.tcc \
+ C:/mingw64/include/c++/14.2.0/map \
+ C:/mingw64/include/c++/14.2.0/bits/stl_tree.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_map.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
+ C:/mingw64/include/c++/14.2.0/valarray \
+ C:/mingw64/include/c++/14.2.0/cmath \
+ C:/mingw64/x86_64-w64-mingw32/include/math.h \
+ C:/mingw64/include/c++/14.2.0/bits/specfun.h \
+ C:/mingw64/include/c++/14.2.0/limits \
+ C:/mingw64/include/c++/14.2.0/tr1/gamma.tcc \
+ C:/mingw64/include/c++/14.2.0/tr1/special_function_util.h \
+ C:/mingw64/include/c++/14.2.0/tr1/bessel_function.tcc \
+ C:/mingw64/include/c++/14.2.0/tr1/beta_function.tcc \
+ C:/mingw64/include/c++/14.2.0/tr1/ell_integral.tcc \
+ C:/mingw64/include/c++/14.2.0/tr1/exp_integral.tcc \
+ C:/mingw64/include/c++/14.2.0/tr1/hypergeometric.tcc \
+ C:/mingw64/include/c++/14.2.0/tr1/legendre_function.tcc \
+ C:/mingw64/include/c++/14.2.0/tr1/modified_bessel_func.tcc \
+ C:/mingw64/include/c++/14.2.0/tr1/poly_hermite.tcc \
+ C:/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc \
+ C:/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc \
+ C:/mingw64/include/c++/14.2.0/bits/valarray_array.h \
+ C:/mingw64/include/c++/14.2.0/bits/valarray_array.tcc \
+ C:/mingw64/include/c++/14.2.0/bits/valarray_before.h \
+ C:/mingw64/include/c++/14.2.0/bits/slice_array.h \
+ C:/mingw64/include/c++/14.2.0/bits/valarray_after.h \
+ C:/mingw64/include/c++/14.2.0/bits/gslice.h \
+ C:/mingw64/include/c++/14.2.0/bits/gslice_array.h \
+ C:/mingw64/include/c++/14.2.0/bits/mask_array.h \
+ C:/mingw64/include/c++/14.2.0/bits/indirect_array.h \
+ C:/mingw64/include/c++/14.2.0/version \
+ C:/mingw64/include/c++/14.2.0/cassert \
+ C:/mingw64/x86_64-w64-mingw32/include/assert.h \
+ C:/mingw64/include/c++/14.2.0/cstring \
+ C:/mingw64/include/c++/14.2.0/filesystem \
+ C:/mingw64/include/c++/14.2.0/bits/fs_fwd.h \
+ C:/mingw64/include/c++/14.2.0/bits/chrono.h \
+ C:/mingw64/include/c++/14.2.0/ratio C:/mingw64/include/c++/14.2.0/ctime \
+ C:/mingw64/include/c++/14.2.0/bits/parse_numbers.h \
+ C:/mingw64/include/c++/14.2.0/bits/fs_path.h \
+ C:/mingw64/include/c++/14.2.0/locale \
  C:/mingw64/include/c++/14.2.0/bits/locale_facets.h \
  C:/mingw64/include/c++/14.2.0/cwctype \
  C:/mingw64/x86_64-w64-mingw32/include/wctype.h \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_base.h \
- C:/mingw64/include/c++/14.2.0/bits/streambuf_iterator.h \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_inline.h \
  C:/mingw64/include/c++/14.2.0/bits/locale_facets.tcc \
+ C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h \
+ C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/time_members.h \
+ C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h \
+ C:/mingw64/include/c++/14.2.0/bits/codecvt.h \
+ C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.tcc \
+ C:/mingw64/include/c++/14.2.0/bits/locale_conv.h \
+ C:/mingw64/include/c++/14.2.0/iomanip \
+ C:/mingw64/include/c++/14.2.0/bits/quoted_string.h \
+ C:/mingw64/include/c++/14.2.0/sstream \
+ C:/mingw64/include/c++/14.2.0/istream C:/mingw64/include/c++/14.2.0/ios \
+ C:/mingw64/include/c++/14.2.0/bits/basic_ios.h \
  C:/mingw64/include/c++/14.2.0/bits/basic_ios.tcc \
  C:/mingw64/include/c++/14.2.0/ostream \
  C:/mingw64/include/c++/14.2.0/bits/ostream.tcc \
  C:/mingw64/include/c++/14.2.0/bits/istream.tcc \
- C:/mingw64/include/c++/14.2.0/bits/codecvt.h \
+ C:/mingw64/include/c++/14.2.0/bits/sstream.tcc \
+ C:/mingw64/include/c++/14.2.0/codecvt \
+ C:/mingw64/include/c++/14.2.0/bits/fs_dir.h \
+ C:/mingw64/include/c++/14.2.0/bits/fs_ops.h \
+ C:/mingw64/include/c++/14.2.0/optional \
+ C:/mingw64/include/c++/14.2.0/numeric \
+ C:/mingw64/include/c++/14.2.0/bits/stl_numeric.h \
+ C:/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h \
+ C:/mingw64/include/c++/14.2.0/any C:/mingw64/include/c++/14.2.0/fstream \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
- C:/mingw64/include/c++/14.2.0/bits/fstream.tcc
+ C:/mingw64/include/c++/14.2.0/bits/fstream.tcc \
+ C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/Utils.hpp

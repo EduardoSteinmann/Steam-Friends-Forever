@@ -3,10 +3,9 @@
 #include <unordered_map>
 #include "AdjacencyMatrix.hpp"
 
-void AdjacencyMatrix::insert_user(uint64_t user_id,std::vector<SteamUser> friends)
+void AdjacencyMatrix::insert_user(uint64_t user_id, std::vector<SteamUser> friends)
 {
-    
-    SteamUser newUser= SteamUser { user_id };
+    SteamUser new_user = SteamUser { user_id };
     //this just checks if user is already existing, if not adds it to the matrix properly and 
     //updates the size of all older rows 
     if(index_graph.find(user_id)==index_graph.end())

@@ -3,7 +3,8 @@
 
 int main()
 {
-    std::cout << "Hello";
     Steam::init();
+    Steam::get_friends(76561199210022989);
+    Steam::deinit();
     return 0;
 }

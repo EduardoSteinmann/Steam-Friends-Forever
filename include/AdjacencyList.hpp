@@ -17,6 +17,8 @@ class AdjacencyList
     //insert the friends of the given user into the graph
     void insert_friends(uint64_t user_id);
 
+    const std::vector<SteamUser>& get_friends(uint64_t user_id);
+
     void number_layers(int layers);
     
 };
