@@ -3,57 +3,44 @@
 #include <unordered_map>
 #include "AdjacencyMatrix.hpp"
 
-void AdjacencyMatrix::insert_user(uint64_t user_id, std::vector<SteamUser> friends)
+void AdjacencyMatrix::insert(uint64_t user_id, std::vector<SteamUser> friends)
 {
-    SteamUser new_user = SteamUser { user_id };
-    //this just checks if user is already existing, if not adds it to the matrix properly and 
-    //updates the size of all older rows 
-    if(index_graph.find(user_id)==index_graph.end())
+    //inserting user
+    size_t user_index = insert_user(user_id);
+    //inserting friends of user
+    insert_user_friends(friends, user_id);
+}
+
+size_t AdjacencyMatrix::insert_user(uint64_t user_id)
+{
+    if(index_graph.find(user_id) == index_graph.end())
     {
-        index_graph[user_id]=adj_matrix.size();
+        index_graph[user_id] = adj_matrix.size();
         adj_matrix.emplace_back(std::vector<bool>{});
-        adj_matrix[adj_matrix.size()-1].resize(adj_matrix[adj_matrix.size()-1].size());
-        for(int i=0;i<adj_matrix.size()-1;i++)
+
+        //puts false for edges of newest vertex with rest of the graph
+        for (int row = 0; row < index_graph.size(); row++)
         {
-            adj_matrix[i].emplace_back(false);
-        }
-    }
-    //makes certain all inputted friends are also apart of the matrix.
-    //If not, also adds them
-    int friend_id;
-    for(auto user:friends)
-    {
-        friend_id=user.user_id;
-        if(index_graph.find(friend_id)==index_graph.end())
-        {
-            
-            index_graph[friend_id]=adj_matrix.size();
-            adj_matrix.emplace_back(std::vector<bool>{});
-            adj_matrix[adj_matrix.size()-1].resize(adj_matrix[adj_matrix.size()-1].size());
-            for(int i=0;i<adj_matrix.size()-1;i++)
+            const size_t row_len = adj_matrix[row].size();
+            for (int col = 0; col < index_graph.size() - row_len; col++)
             {
-                adj_matrix[i].emplace_back(false);
+                adj_matrix[row].emplace_back(false);
             }
         }
     }
-    //then this creates the connections between the two users both ways.
-    //As friends on steam are mutual.
-    int indexOfUser=index_graph[user_id];
-    int indexOfFriend=0;
-    for(auto user:friends)
+    return index_graph[user_id];
+}
+
+void AdjacencyMatrix::insert_user_friends(std::vector<SteamUser>& friends , uint64_t user_id)
+{
+    int user_index = index_graph[user_id];
+    for(size_t i = 1; i < friends.size(); i++)
     {
-        friend_id=user.user_id;
-        indexOfFriend=index_graph[friend_id];
-        adj_matrix[indexOfUser][indexOfFriend]=true;
-        adj_matrix[indexOfFriend][indexOfUser]=true;
-    }
+        auto& user = friends[i];
 
+        size_t friend_index = insert_user(user.user_id);
         
-
-
-    
-
-
-};
-       
-   
+        adj_matrix[user_index][friend_index] = true;
+        adj_matrix[friend_index][user_index] = true;
+    }
+}

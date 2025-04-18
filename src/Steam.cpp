@@ -51,7 +51,7 @@ namespace Steam
 
     std::vector<SteamUser> get_friends(uint64_t user_id)
     {
-        std::vector<SteamUser> friends = {};
+       std::vector<SteamUser> friends = {};
         std::string ids = std::to_string(user_id);
         std::string url =  "http://api.steampowered.com/ISteamUser/GetFriendList/v0001/?key=" + API_key + "&steamid=" + ids + "&relationship=friend";
         ids.push_back(',');
@@ -85,7 +85,7 @@ namespace Steam
 
         json_response = nlohmann::json::parse(response);
 
-        for (int i = json_response["response"]["players"].size(); i >= 0 && i >= json_response["response"]["players"].size() - 100; i--)
+        for (int i = 0; i < json_response["response"]["players"].size(); i++)
         {
             auto user_json = json_response["response"]["players"][i];
             auto friend_id = user_json["steamid"].template get<std::string>();
