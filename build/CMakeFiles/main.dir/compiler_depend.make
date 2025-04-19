@@ -511,6 +511,112 @@ CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj: C:/Users/edwar/UF/COP3530/Steam
   C:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
   C:/mingw64/x86_64-w64-mingw32/include/wchar.h
 
+CMakeFiles/main.dir/src/AppDriver.c.obj: C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/AppDriver.c \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_assert.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_asyncio.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_atomic.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_audio.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_begin_code.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_bits.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_blendmode.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_camera.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_clipboard.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_close_code.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_cpuinfo.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_dialog.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_endian.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_error.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_events.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_filesystem.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_gamepad.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_gpu.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_guid.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_haptic.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_hidapi.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_hints.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_init.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_iostream.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_joystick.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_keyboard.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_keycode.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_loadso.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_locale.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_log.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_main.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_messagebox.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_metal.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_misc.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_mouse.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_mutex.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_oldnames.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_pen.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_pixels.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_platform.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_platform_defines.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_power.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_process.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_properties.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_rect.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_render.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_scancode.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_sensor.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_stdinc.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_storage.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_surface.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_system.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_thread.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_time.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_timer.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_touch.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_tray.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_version.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_video.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3_ttf/SDL_ttf.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/clay.h \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/clay_renderer_SDL3.c \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/emmintrin.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mmintrin.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/syslimits.h \
+  C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xmmintrin.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_mac.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_secapi.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stat64.h \
+  C:/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h \
+  C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h \
+  C:/mingw64/x86_64-w64-mingw32/include/crtdefs.h \
+  C:/mingw64/x86_64-w64-mingw32/include/errno.h \
+  C:/mingw64/x86_64-w64-mingw32/include/inttypes.h \
+  C:/mingw64/x86_64-w64-mingw32/include/limits.h \
+  C:/mingw64/x86_64-w64-mingw32/include/malloc.h \
+  C:/mingw64/x86_64-w64-mingw32/include/process.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/sec_api/wchar_s.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdarg.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stddef.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdint.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdio.h \
+  C:/mingw64/x86_64-w64-mingw32/include/stdlib.h \
+  C:/mingw64/x86_64-w64-mingw32/include/string.h \
+  C:/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+  C:/mingw64/x86_64-w64-mingw32/include/sys/types.h \
+  C:/mingw64/x86_64-w64-mingw32/include/vadefs.h \
+  C:/mingw64/x86_64-w64-mingw32/include/wchar.h
+
 CMakeFiles/main.dir/src/Steam.cpp.obj: C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/Steam.cpp \
   C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/Steam.hpp \
   C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/SteamUser.hpp \
@@ -1423,6 +1529,7 @@ CMakeFiles/main.dir/src/Utils.cpp.obj: C:/Users/edwar/UF/COP3530/Steam-Friends-F
 CMakeFiles/main.dir/src/main.cpp.obj: C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/main.cpp \
   C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/AdjacencyList.hpp \
   C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/AdjacencyMatrix.hpp \
+  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/AppDriver.h \
   C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/Steam.hpp \
   C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/SteamUser.hpp \
   C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/curl/curl.h \
@@ -1902,6 +2009,8 @@ C:/mingw64/include/c++/14.2.0/backward/binders.h:
 
 C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/curl/multi.h:
 
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_atomic.h:
+
 C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/curl/options.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vnniintrin.h:
@@ -1909,6 +2018,8 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vnniintrin.h:
 C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/curl/system.h:
 
 C:/mingw64/include/c++/14.2.0/bits/memory_resource.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_gamepad.h:
 
 C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/curl/urlapi.h:
 
@@ -1928,9 +2039,9 @@ C:/mingw64/include/c++/14.2.0/bits/concept_check.h:
 
 C:/mingw64/include/c++/14.2.0/bits/postypes.h:
 
-C:/mingw64/x86_64-w64-mingw32/include/cderr.h:
-
 C:/mingw64/include/c++/14.2.0/locale:
+
+C:/mingw64/x86_64-w64-mingw32/include/cderr.h:
 
 C:/mingw64/include/c++/14.2.0/bits/alloc_traits.h:
 
@@ -1942,6 +2053,8 @@ C:/mingw64/include/c++/14.2.0/bits/basic_string.h:
 
 C:/mingw64/include/c++/14.2.0/bits/memoryfwd.h:
 
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3_ttf/SDL_ttf.h:
+
 C:/mingw64/include/c++/14.2.0/bits/basic_string.tcc:
 
 C:/mingw64/x86_64-w64-mingw32/include/nb30.h:
@@ -1950,11 +2063,13 @@ C:/mingw64/include/c++/14.2.0/bits/erase_if.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/x86gprintrin.h:
 
-C:/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h:
-
 C:/mingw64/include/c++/14.2.0/exception:
 
+C:/mingw64/include/c++/14.2.0/bits/uses_allocator_args.h:
+
 C:/mingw64/include/c++/14.2.0/bits/exception_defines.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_filesystem.h:
 
 C:/mingw64/include/c++/14.2.0/bits/charconv.h:
 
@@ -1978,8 +2093,6 @@ C:/mingw64/include/c++/14.2.0/bits/requires_hosted.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/namespaceapi.h:
 
-C:/mingw64/include/c++/14.2.0/iomanip:
-
 C:/mingw64/include/c++/14.2.0/bits/functional_hash.h:
 
 C:/mingw64/include/c++/14.2.0/bits/cpp_type_traits.h:
@@ -1997,6 +2110,8 @@ C:/mingw64/include/c++/14.2.0/bits/functexcept.h:
 C:/mingw64/include/c++/14.2.0/bits/hashtable.h:
 
 C:/mingw64/include/c++/14.2.0/bits/hash_bytes.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_mouse.h:
 
 C:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h:
 
@@ -2044,8 +2159,6 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm3dnow.h:
 
 C:/mingw64/include/c++/14.2.0/bits/stl_pair.h:
 
-C:/mingw64/include/c++/14.2.0/limits:
-
 C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr.h:
 
 C:/mingw64/include/c++/14.2.0/bits/stl_uninitialized.h:
@@ -2074,19 +2187,21 @@ C:/mingw64/x86_64-w64-mingw32/include/securitybaseapi.h:
 
 C:/mingw64/include/c++/14.2.0/bits/utility.h:
 
+C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h:
+
+C:/mingw64/include/c++/14.2.0/map:
+
 C:/mingw64/include/c++/14.2.0/bits/vector.tcc:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512fp16vlintrin.h:
 
-C:/mingw64/include/c++/14.2.0/map:
-
-C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h:
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_pixels.h:
 
 C:/mingw64/include/c++/14.2.0/bits/version.h:
 
-C:/mingw64/include/c++/14.2.0/cerrno:
-
 C:/mingw64/include/c++/14.2.0/tr1/bessel_function.tcc:
+
+C:/mingw64/include/c++/14.2.0/cerrno:
 
 C:/mingw64/include/c++/14.2.0/clocale:
 
@@ -2192,13 +2307,13 @@ C:/mingw64/include/c++/14.2.0/bits/atomic_base.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxcomplexintrin.h:
 
-C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxfp16intrin.h:
-
-C:/mingw64/include/c++/14.2.0/tr1/legendre_function.tcc:
+C:/mingw64/include/c++/14.2.0/cwctype:
 
 C:/mingw64/include/c++/14.2.0/bits/atomic_lockfree_defines.h:
 
-C:/mingw64/include/c++/14.2.0/cwctype:
+C:/mingw64/include/c++/14.2.0/tr1/legendre_function.tcc:
+
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxfp16intrin.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/winscard.h:
 
@@ -2208,17 +2323,23 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxint8intrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/amxtileintrin.h:
 
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_mutex.h:
+
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx2intrin.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/pthread_time.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx5124fmapsintrin.h:
 
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_log.h:
+
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512bf16intrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/serializeintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512bf16vlintrin.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_blendmode.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512bitalgvlintrin.h:
 
@@ -2248,19 +2369,21 @@ C:/mingw64/x86_64-w64-mingw32/include/winnt.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512pfintrin.h:
 
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_timer.h:
+
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vbmi2intrin.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/oaidl.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/specstrings.h:
 
-C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vbmi2vlintrin.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/namedpipeapi.h:
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/AdjacencyMatrix.hpp:
 
 C:/mingw64/include/c++/14.2.0/pstl/execution_defs.h:
 
-C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/AdjacencyMatrix.hpp:
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vbmi2vlintrin.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/namedpipeapi.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vbmiintrin.h:
 
@@ -2276,6 +2399,10 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vp2intersectintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vlintrin.h:
 
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_main.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_pen.h:
+
 C:/mingw64/include/c++/14.2.0/bits/shared_ptr.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/bcrypt.h:
@@ -2286,11 +2413,11 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vp2intersectvlintrin.
 
 C:/mingw64/x86_64-w64-mingw32/include/systemtopologyapi.h:
 
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_platform_defines.h:
+
 C:/mingw64/include/c++/14.2.0/any:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vpopcntdqintrin.h:
-
-C:/mingw64/include/c++/14.2.0/tr1/ell_integral.tcc:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/avx512vpopcntdqvlintrin.h:
 
@@ -2328,19 +2455,17 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/clflushoptintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/clwbintrin.h:
 
-C:/mingw64/include/c++/14.2.0/compare:
-
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/clzerointrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/cmpccxaddintrin.h:
 
-C:/mingw64/include/c++/14.2.0/filesystem:
-
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/emmintrin.h:
 
-C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/f16cintrin.h:
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_process.h:
 
 C:/mingw64/include/c++/14.2.0/bits/uniform_int_dist.h:
+
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/f16cintrin.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/pthread.h:
 
@@ -2349,8 +2474,6 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/fma4intrin.h:
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/prfchiintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/fmaintrin.h:
-
-C:/mingw64/include/c++/14.2.0/memory:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/fxsrintrin.h:
 
@@ -2368,11 +2491,9 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/limits.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/lwpintrin.h:
 
-C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/lzcntintrin.h:
-
 C:/mingw64/include/c++/14.2.0/tr1/modified_bessel_func.tcc:
 
-C:/mingw64/include/c++/14.2.0/bits/valarray_array.h:
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/lzcntintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mm_malloc.h:
 
@@ -2382,19 +2503,21 @@ C:/mingw64/x86_64-w64-mingw32/include/ctype.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/movdirintrin.h:
 
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_bits.h:
+
 C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/gthr-default.h:
 
-C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mwaitintrin.h:
-
 C:/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h:
+
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mwaitintrin.h:
 
 C:/mingw64/include/c++/14.2.0/bits/locale_facets_nonio.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/mwaitxintrin.h:
 
-C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/pconfigintrin.h:
-
 C:/mingw64/include/c++/14.2.0/bits/stl_tempbuf.h:
+
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/pconfigintrin.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/apiset.h:
 
@@ -2416,15 +2539,17 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/sgxintrin.h:
 
 C:/mingw64/include/c++/14.2.0/bits/istream.tcc:
 
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_iostream.h:
+
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/sha512intrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/sm4intrin.h:
 
-C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/shaintrin.h:
+C:/mingw64/include/c++/14.2.0/bits/nested_exception.h:
 
 C:/mingw64/include/c++/14.2.0/bits/stl_raw_storage_iter.h:
 
-C:/mingw64/include/c++/14.2.0/bits/nested_exception.h:
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/shaintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/smmintrin.h:
 
@@ -2433,6 +2558,8 @@ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdarg.h:
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stddef.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/fltwinerror.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_locale.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdint.h:
 
@@ -2456,13 +2583,15 @@ C:/mingw64/include/c++/14.2.0/bits/stl_algo.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/vaesintrin.h:
 
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_touch.h:
+
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/waitpkgintrin.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_platform.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xmmintrin.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xsavecintrin.h:
-
-C:/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h:
 
 C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/xsaveoptintrin.h:
 
@@ -2488,6 +2617,8 @@ C:/mingw64/x86_64-w64-mingw32/include/_timeval.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/apisetcconv.h:
 
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_keycode.h:
+
 C:/mingw64/x86_64-w64-mingw32/include/basetsd.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/ncrypt.h:
@@ -2498,17 +2629,15 @@ C:/mingw64/x86_64-w64-mingw32/include/combaseapi.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/commdlg.h:
 
-C:/mingw64/x86_64-w64-mingw32/include/concurrencysal.h:
-
 C:/mingw64/include/c++/14.2.0/sstream:
 
-C:/mingw64/include/c++/14.2.0/numeric:
+C:/mingw64/x86_64-w64-mingw32/include/concurrencysal.h:
+
+C:/mingw64/include/c++/14.2.0/cmath:
 
 C:/mingw64/x86_64-w64-mingw32/include/corecrt_stdio_config.h:
 
 C:/mingw64/include/c++/14.2.0/bits/indirect_array.h:
-
-C:/mingw64/include/c++/14.2.0/cmath:
 
 C:/mingw64/x86_64-w64-mingw32/include/corecrt_wstdlib.h:
 
@@ -2536,8 +2665,6 @@ C:/mingw64/x86_64-w64-mingw32/include/fileapi.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/guiddef.h:
 
-C:/mingw64/include/c++/14.2.0/forward_list:
-
 C:/mingw64/x86_64-w64-mingw32/include/handleapi.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/interlockedapi.h:
@@ -2547,6 +2674,8 @@ C:/mingw64/x86_64-w64-mingw32/include/in6addr.h:
 C:/mingw64/x86_64-w64-mingw32/include/inaddr.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/inttypes.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/clay_renderer_SDL3.c:
 
 C:/mingw64/x86_64-w64-mingw32/include/winsock2.h:
 
@@ -2562,9 +2691,9 @@ C:/mingw64/x86_64-w64-mingw32/include/locale.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/lzexpand.h:
 
-C:/mingw64/x86_64-w64-mingw32/include/mciapi.h:
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_stdinc.h:
 
-C:/mingw64/include/c++/14.2.0/bits/streambuf_iterator.h:
+C:/mingw64/x86_64-w64-mingw32/include/mciapi.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/memoryapi.h:
 
@@ -2590,6 +2719,8 @@ C:/mingw64/x86_64-w64-mingw32/include/stddef.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/mstcpip.h:
 
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL.h:
+
 C:/mingw64/x86_64-w64-mingw32/include/msxml.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/objidlbase.h:
@@ -2604,13 +2735,11 @@ C:/mingw64/x86_64-w64-mingw32/include/playsoundapi.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/windows.h:
 
-C:/mingw64/include/c++/14.2.0/bits/stream_iterator.h:
-
-C:/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc:
-
 C:/mingw64/x86_64-w64-mingw32/include/processenv.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/processtopologyapi.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_events.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/profileapi.h:
 
@@ -2628,9 +2757,9 @@ C:/mingw64/x86_64-w64-mingw32/include/psdk_inc/_ip_mreq1.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/wchar.h:
 
-C:/mingw64/x86_64-w64-mingw32/include/psdk_inc/_ip_types.h:
-
 C:/mingw64/include/c++/14.2.0/valarray:
+
+C:/mingw64/x86_64-w64-mingw32/include/psdk_inc/_ip_types.h:
 
 C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/Steam.cpp:
 
@@ -2646,11 +2775,11 @@ C:/mingw64/x86_64-w64-mingw32/include/ws2tcpip.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/qos.h:
 
+C:/mingw64/include/c++/14.2.0/tr1/special_function_util.h:
+
 C:/mingw64/x86_64-w64-mingw32/include/realtimeapiset.h:
 
 C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/json.hpp:
-
-C:/mingw64/include/c++/14.2.0/tr1/special_function_util.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/reason.h:
 
@@ -2672,15 +2801,17 @@ C:/mingw64/x86_64-w64-mingw32/include/utilapiset.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/sal.h:
 
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/AppDriver.c:
+
 C:/mingw64/x86_64-w64-mingw32/include/sdkddkver.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h:
 
-C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h:
+C:/mingw64/include/c++/14.2.0/bits/fs_dir.h:
 
 C:/mingw64/include/c++/14.2.0/version:
 
-C:/mingw64/include/c++/14.2.0/bits/fs_dir.h:
+C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h:
 
@@ -2694,15 +2825,15 @@ C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/Adjace
 
 C:/mingw64/x86_64-w64-mingw32/include/securityappcontainer.h:
 
+C:/mingw64/include/c++/14.2.0/cassert:
+
 C:/mingw64/x86_64-w64-mingw32/include/servprov.h:
 
-C:/mingw64/include/c++/14.2.0/cassert:
+C:/mingw64/include/c++/14.2.0/tr1/gamma.tcc:
 
 C:/mingw64/x86_64-w64-mingw32/include/stdio.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/synchapi.h:
-
-C:/mingw64/include/c++/14.2.0/tr1/gamma.tcc:
 
 C:/mingw64/x86_64-w64-mingw32/include/stdlib.h:
 
@@ -2717,8 +2848,6 @@ C:/mingw64/include/c++/14.2.0/bits/locale_classes.tcc:
 C:/mingw64/x86_64-w64-mingw32/include/sys/timeb.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/sysinfoapi.h:
-
-C:/mingw64/include/c++/14.2.0/fstream:
 
 C:/mingw64/x86_64-w64-mingw32/include/threadpoolapiset.h:
 
@@ -2768,11 +2897,105 @@ C:/mingw64/x86_64-w64-mingw32/include/winsvc.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/ws2ipdef.h:
 
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_sensor.h:
+
 C:/mingw64/x86_64-w64-mingw32/include/wow64apiset.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/ws2def.h:
 
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_surface.h:
+
 C:/mingw64/x86_64-w64-mingw32/include/wtypes.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_assert.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_asyncio.h:
+
+C:/mingw64/include/c++/14.2.0/typeinfo:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_audio.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_begin_code.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_camera.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_clipboard.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_close_code.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_hints.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_cpuinfo.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_dialog.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/clay.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_endian.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_error.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_gpu.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_guid.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_haptic.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_hidapi.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_init.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_joystick.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_keyboard.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_loadso.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_tray.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_messagebox.h:
+
+C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_metal.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_misc.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_oldnames.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_power.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_properties.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_rect.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_render.h:
+
+C:/mingw64/include/c++/14.2.0/bits/locale_classes.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_scancode.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_storage.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_system.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_thread.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_time.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_version.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/SDL3/SDL_video.h:
+
+C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h:
+
+C:/mingw64/include/c++/14.2.0/bits/basic_ios.h:
+
+C:/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h:
+
+C:/mingw64/x86_64-w64-mingw32/include/process.h:
 
 C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/Utils.hpp:
 
@@ -2786,10 +3009,6 @@ C:/mingw64/include/c++/14.2.0/bits/align.h:
 
 C:/mingw64/include/c++/14.2.0/bits/allocated_ptr.h:
 
-C:/mingw64/include/c++/14.2.0/bits/basic_ios.h:
-
-C:/mingw64/include/c++/14.2.0/bits/shared_ptr_atomic.h:
-
 C:/mingw64/include/c++/14.2.0/bits/basic_ios.tcc:
 
 C:/mingw64/include/c++/14.2.0/bits/cxxabi_init_exception.h:
@@ -2800,15 +3019,13 @@ C:/mingw64/include/c++/14.2.0/bits/fs_ops.h:
 
 C:/mingw64/include/c++/14.2.0/bits/fs_path.h:
 
-C:/mingw64/include/c++/14.2.0/bits/fstream.tcc:
-
 C:/mingw64/include/c++/14.2.0/istream:
+
+C:/mingw64/include/c++/14.2.0/bits/fstream.tcc:
 
 C:/mingw64/include/c++/14.2.0/bits/gslice.h:
 
 C:/mingw64/include/c++/14.2.0/bits/gslice_array.h:
-
-C:/mingw64/include/c++/14.2.0/bits/locale_classes.h:
 
 C:/mingw64/include/c++/14.2.0/bits/locale_facets.h:
 
@@ -2832,17 +3049,21 @@ C:/mingw64/include/c++/14.2.0/bits/stl_numeric.h:
 
 C:/mingw64/include/c++/14.2.0/bits/stl_relops.h:
 
-C:/mingw64/include/c++/14.2.0/ext/atomicity.h:
-
-C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/atomic_word.h:
-
 C:/mingw64/include/c++/14.2.0/bits/stl_tree.h:
 
+C:/mingw64/include/c++/14.2.0/tr1/poly_laguerre.tcc:
+
+C:/mingw64/include/c++/14.2.0/bits/stream_iterator.h:
+
 C:/mingw64/include/c++/14.2.0/bits/streambuf.tcc:
+
+C:/mingw64/include/c++/14.2.0/bits/streambuf_iterator.h:
 
 C:/mingw64/include/c++/14.2.0/bits/unique_ptr.h:
 
 C:/mingw64/include/c++/14.2.0/bits/valarray_after.h:
+
+C:/mingw64/include/c++/14.2.0/bits/valarray_array.h:
 
 C:/mingw64/include/c++/14.2.0/bits/valarray_array.tcc:
 
@@ -2850,23 +3071,47 @@ C:/mingw64/include/c++/14.2.0/bits/valarray_before.h:
 
 C:/mingw64/include/c++/14.2.0/codecvt:
 
+C:/mingw64/include/c++/14.2.0/compare:
+
 C:/mingw64/include/c++/14.2.0/cstring:
 
 C:/mingw64/include/c++/14.2.0/ctime:
 
+C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/atomic_word.h:
+
+C:/mingw64/include/c++/14.2.0/ext/atomicity.h:
+
+C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/AppDriver.h:
+
 C:/mingw64/include/c++/14.2.0/ext/concurrence.h:
 
+C:/mingw64/include/c++/14.2.0/filesystem:
+
+C:/mingw64/include/c++/14.2.0/forward_list:
+
+C:/mingw64/include/c++/14.2.0/fstream:
+
 C:/mingw64/include/c++/14.2.0/functional:
+
+C:/mingw64/include/c++/14.2.0/iomanip:
 
 C:/mingw64/include/c++/14.2.0/ios:
 
 C:/mingw64/include/c++/14.2.0/iterator:
+
+C:/mingw64/include/c++/14.2.0/limits:
+
+C:/mingw64/include/c++/14.2.0/memory:
+
+C:/mingw64/include/c++/14.2.0/numeric:
 
 C:/mingw64/include/c++/14.2.0/optional:
 
 C:/mingw64/include/c++/14.2.0/ostream:
 
 C:/mingw64/include/c++/14.2.0/pstl/glue_algorithm_defs.h:
+
+C:/mingw64/include/c++/14.2.0/pstl/glue_numeric_defs.h:
 
 C:/mingw64/include/c++/14.2.0/ratio:
 
@@ -2878,6 +3123,8 @@ C:/mingw64/include/c++/14.2.0/system_error:
 
 C:/mingw64/include/c++/14.2.0/tr1/beta_function.tcc:
 
+C:/mingw64/include/c++/14.2.0/tr1/ell_integral.tcc:
+
 C:/mingw64/include/c++/14.2.0/tr1/exp_integral.tcc:
 
 C:/mingw64/include/c++/14.2.0/tr1/hypergeometric.tcc:
@@ -2885,8 +3132,6 @@ C:/mingw64/include/c++/14.2.0/tr1/hypergeometric.tcc:
 C:/mingw64/include/c++/14.2.0/tr1/poly_hermite.tcc:
 
 C:/mingw64/include/c++/14.2.0/tr1/riemann_zeta.tcc:
-
-C:/mingw64/include/c++/14.2.0/typeinfo:
 
 C:/mingw64/include/c++/14.2.0/utility:
 
@@ -2896,15 +3141,9 @@ C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_base.h:
 
 C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/ctype_inline.h:
 
-C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/error_constants.h:
-
 C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/messages_members.h:
 
-C:/mingw64/x86_64-w64-mingw32/include/corecrt_startup.h:
-
 C:/mingw64/x86_64-w64-mingw32/include/math.h:
-
-C:/mingw64/x86_64-w64-mingw32/include/process.h:
 
 C:/mingw64/x86_64-w64-mingw32/include/pthread_compat.h:
 

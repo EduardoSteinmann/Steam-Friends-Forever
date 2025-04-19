@@ -84,6 +84,9 @@
         "forward_list": "cpp",
         "ranges": "cpp",
         "ratio": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "sdl_ttf.h": "c",
+        "sdl_main.h": "c",
+        "clay.h": "c"
     }
 }

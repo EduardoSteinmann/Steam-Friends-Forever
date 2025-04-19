@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/AdjacencyList.cpp.obj.d"
   "CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj"
   "CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj.d"
+  "CMakeFiles/main.dir/src/AppDriver.c.obj"
+  "CMakeFiles/main.dir/src/AppDriver.c.obj.d"
   "CMakeFiles/main.dir/src/Steam.cpp.obj"
   "CMakeFiles/main.dir/src/Steam.cpp.obj.d"
   "CMakeFiles/main.dir/src/Utils.cpp.obj"
@@ -16,6 +18,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
+foreach(lang C CXX)
   include(CMakeFiles/main.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

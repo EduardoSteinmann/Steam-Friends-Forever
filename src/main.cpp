@@ -2,7 +2,9 @@
 #include "Steam.hpp"
 #include "AdjacencyList.hpp"
 #include "AdjacencyMatrix.hpp"
-int main()
+#include "AppDriver.h"
+
+int main(int argc, char* argv[])
 {
     Steam::init();
     uint64_t steam_id = 76561199210022989;
@@ -10,5 +12,6 @@ int main()
     AdjacencyMatrix adj_matrix;
     adj_matrix.insert(steam_id, friends);
     Steam::deinit();
-    return 0;
+
+    return app_driver();
 }

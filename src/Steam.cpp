@@ -85,7 +85,7 @@ namespace Steam
 
         json_response = nlohmann::json::parse(response);
 
-        for (int i = 0; i < json_response["response"]["players"].size(); i++)
+        for (size_t i = 0; i < json_response["response"]["players"].size(); i++)
         {
             auto user_json = json_response["response"]["players"][i];
             auto friend_id = user_json["steamid"].template get<std::string>();
