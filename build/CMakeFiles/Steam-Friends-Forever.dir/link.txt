@@ -1,0 +1,3 @@
+C:\ST\STM32CubeCLT_1.18.0\CMake\bin\cmake.exe -E rm -f CMakeFiles\Steam-Friends-Forever.dir/objects.a
+C:\mingw64\bin\ar.exe qc CMakeFiles\Steam-Friends-Forever.dir/objects.a @CMakeFiles\Steam-Friends-Forever.dir\objects1.rsp
+C:\mingw64\bin\g++.exe  -Wall -Werror -g -Wl,--whole-archive CMakeFiles\Steam-Friends-Forever.dir/objects.a -Wl,--no-whole-archive -o Steam-Friends-Forever.exe -Wl,--out-implib,libSteam-Friends-Forever.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Steam-Friends-Forever.dir\linkLibs.rsp

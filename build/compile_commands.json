@@ -1,38 +1,38 @@
 [
 {
   "directory": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/build",
-  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp  -Wall -Werror -g -o CMakeFiles\\main.dir\\src\\main.cpp.obj -c C:\\Users\\edwar\\UF\\COP3530\\Steam-Friends-Forever\\Steam-Friends-Forever\\src\\main.cpp",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/Steam-Friends-Forever.dir/includes_CXX.rsp  -Wall -Werror -g -o CMakeFiles\\Steam-Friends-Forever.dir\\src\\main.cpp.obj -c C:\\Users\\edwar\\UF\\COP3530\\Steam-Friends-Forever\\Steam-Friends-Forever\\src\\main.cpp",
   "file": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/main.cpp",
-  "output": "CMakeFiles/main.dir/src/main.cpp.obj"
+  "output": "CMakeFiles/Steam-Friends-Forever.dir/src/main.cpp.obj"
 },
 {
   "directory": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/build",
-  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp  -Wall -Werror -g -o CMakeFiles\\main.dir\\src\\Steam.cpp.obj -c C:\\Users\\edwar\\UF\\COP3530\\Steam-Friends-Forever\\Steam-Friends-Forever\\src\\Steam.cpp",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/Steam-Friends-Forever.dir/includes_CXX.rsp  -Wall -Werror -g -o CMakeFiles\\Steam-Friends-Forever.dir\\src\\Steam.cpp.obj -c C:\\Users\\edwar\\UF\\COP3530\\Steam-Friends-Forever\\Steam-Friends-Forever\\src\\Steam.cpp",
   "file": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/Steam.cpp",
-  "output": "CMakeFiles/main.dir/src/Steam.cpp.obj"
+  "output": "CMakeFiles/Steam-Friends-Forever.dir/src/Steam.cpp.obj"
 },
 {
   "directory": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/build",
-  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp  -Wall -Werror -g -o CMakeFiles\\main.dir\\src\\AdjacencyList.cpp.obj -c C:\\Users\\edwar\\UF\\COP3530\\Steam-Friends-Forever\\Steam-Friends-Forever\\src\\AdjacencyList.cpp",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/Steam-Friends-Forever.dir/includes_CXX.rsp  -Wall -Werror -g -o CMakeFiles\\Steam-Friends-Forever.dir\\src\\AdjacencyList.cpp.obj -c C:\\Users\\edwar\\UF\\COP3530\\Steam-Friends-Forever\\Steam-Friends-Forever\\src\\AdjacencyList.cpp",
   "file": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/AdjacencyList.cpp",
-  "output": "CMakeFiles/main.dir/src/AdjacencyList.cpp.obj"
+  "output": "CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyList.cpp.obj"
 },
 {
   "directory": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/build",
-  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp  -Wall -Werror -g -o CMakeFiles\\main.dir\\src\\AdjacencyMatrix.cpp.obj -c C:\\Users\\edwar\\UF\\COP3530\\Steam-Friends-Forever\\Steam-Friends-Forever\\src\\AdjacencyMatrix.cpp",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/Steam-Friends-Forever.dir/includes_CXX.rsp  -Wall -Werror -g -o CMakeFiles\\Steam-Friends-Forever.dir\\src\\AdjacencyMatrix.cpp.obj -c C:\\Users\\edwar\\UF\\COP3530\\Steam-Friends-Forever\\Steam-Friends-Forever\\src\\AdjacencyMatrix.cpp",
   "file": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/AdjacencyMatrix.cpp",
-  "output": "CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj"
+  "output": "CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyMatrix.cpp.obj"
 },
 {
   "directory": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/build",
-  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp  -Wall -Werror -g -o CMakeFiles\\main.dir\\src\\Utils.cpp.obj -c C:\\Users\\edwar\\UF\\COP3530\\Steam-Friends-Forever\\Steam-Friends-Forever\\src\\Utils.cpp",
+  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/Steam-Friends-Forever.dir/includes_CXX.rsp  -Wall -Werror -g -o CMakeFiles\\Steam-Friends-Forever.dir\\src\\Utils.cpp.obj -c C:\\Users\\edwar\\UF\\COP3530\\Steam-Friends-Forever\\Steam-Friends-Forever\\src\\Utils.cpp",
   "file": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/Utils.cpp",
-  "output": "CMakeFiles/main.dir/src/Utils.cpp.obj"
+  "output": "CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.obj"
 },
 {
   "directory": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/build",
-  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/main.dir/includes_C.rsp -g -o CMakeFiles\\main.dir\\src\\AppDriver.c.obj -c C:\\Users\\edwar\\UF\\COP3530\\Steam-Friends-Forever\\Steam-Friends-Forever\\src\\AppDriver.c",
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/Steam-Friends-Forever.dir/includes_C.rsp -g -o CMakeFiles\\Steam-Friends-Forever.dir\\src\\AppDriver.c.obj -c C:\\Users\\edwar\\UF\\COP3530\\Steam-Friends-Forever\\Steam-Friends-Forever\\src\\AppDriver.c",
   "file": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/AppDriver.c",
-  "output": "CMakeFiles/main.dir/src/AppDriver.c.obj"
+  "output": "CMakeFiles/Steam-Friends-Forever.dir/src/AppDriver.c.obj"
 }
 ]

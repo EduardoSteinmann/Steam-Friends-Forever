@@ -62,7 +62,7 @@ CMAKE_BINARY_DIR = C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/main.dir/all
+all: CMakeFiles/Steam-Friends-Forever.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -70,34 +70,34 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/main.dir/clean
+clean: CMakeFiles/Steam-Friends-Forever.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/main.dir
+# Target rules for target CMakeFiles/Steam-Friends-Forever.dir
 
 # All Build rule for target.
-CMakeFiles/main.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\build\CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target main"
-.PHONY : CMakeFiles/main.dir/all
+CMakeFiles/Steam-Friends-Forever.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\build\CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target Steam-Friends-Forever"
+.PHONY : CMakeFiles/Steam-Friends-Forever.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/main.dir/rule: cmake_check_build_system
+CMakeFiles/Steam-Friends-Forever.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\build\CMakeFiles 7
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/main.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Steam-Friends-Forever.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\build\CMakeFiles 0
-.PHONY : CMakeFiles/main.dir/rule
+.PHONY : CMakeFiles/Steam-Friends-Forever.dir/rule
 
 # Convenience name for target.
-main: CMakeFiles/main.dir/rule
-.PHONY : main
+Steam-Friends-Forever: CMakeFiles/Steam-Friends-Forever.dir/rule
+.PHONY : Steam-Friends-Forever
 
 # clean rule for target.
-CMakeFiles/main.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/clean
-.PHONY : CMakeFiles/main.dir/clean
+CMakeFiles/Steam-Friends-Forever.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/clean
+.PHONY : CMakeFiles/Steam-Friends-Forever.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

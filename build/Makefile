@@ -116,24 +116,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main
+# Target rules for targets named Steam-Friends-Forever
 
 # Build rule for target.
-main: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 main
-.PHONY : main
+Steam-Friends-Forever: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Steam-Friends-Forever
+.PHONY : Steam-Friends-Forever
 
 # fast build rule for target.
-main/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
-.PHONY : main/fast
+Steam-Friends-Forever/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/build
+.PHONY : Steam-Friends-Forever/fast
 
 src/AdjacencyList.obj: src/AdjacencyList.cpp.obj
 .PHONY : src/AdjacencyList.obj
 
 # target to build an object file
 src/AdjacencyList.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/AdjacencyList.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyList.cpp.obj
 .PHONY : src/AdjacencyList.cpp.obj
 
 src/AdjacencyList.i: src/AdjacencyList.cpp.i
@@ -141,7 +141,7 @@ src/AdjacencyList.i: src/AdjacencyList.cpp.i
 
 # target to preprocess a source file
 src/AdjacencyList.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/AdjacencyList.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyList.cpp.i
 .PHONY : src/AdjacencyList.cpp.i
 
 src/AdjacencyList.s: src/AdjacencyList.cpp.s
@@ -149,7 +149,7 @@ src/AdjacencyList.s: src/AdjacencyList.cpp.s
 
 # target to generate assembly for a file
 src/AdjacencyList.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/AdjacencyList.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyList.cpp.s
 .PHONY : src/AdjacencyList.cpp.s
 
 src/AdjacencyMatrix.obj: src/AdjacencyMatrix.cpp.obj
@@ -157,7 +157,7 @@ src/AdjacencyMatrix.obj: src/AdjacencyMatrix.cpp.obj
 
 # target to build an object file
 src/AdjacencyMatrix.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyMatrix.cpp.obj
 .PHONY : src/AdjacencyMatrix.cpp.obj
 
 src/AdjacencyMatrix.i: src/AdjacencyMatrix.cpp.i
@@ -165,7 +165,7 @@ src/AdjacencyMatrix.i: src/AdjacencyMatrix.cpp.i
 
 # target to preprocess a source file
 src/AdjacencyMatrix.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyMatrix.cpp.i
 .PHONY : src/AdjacencyMatrix.cpp.i
 
 src/AdjacencyMatrix.s: src/AdjacencyMatrix.cpp.s
@@ -173,7 +173,7 @@ src/AdjacencyMatrix.s: src/AdjacencyMatrix.cpp.s
 
 # target to generate assembly for a file
 src/AdjacencyMatrix.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/AdjacencyMatrix.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyMatrix.cpp.s
 .PHONY : src/AdjacencyMatrix.cpp.s
 
 src/AppDriver.obj: src/AppDriver.c.obj
@@ -181,7 +181,7 @@ src/AppDriver.obj: src/AppDriver.c.obj
 
 # target to build an object file
 src/AppDriver.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/AppDriver.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/AppDriver.c.obj
 .PHONY : src/AppDriver.c.obj
 
 src/AppDriver.i: src/AppDriver.c.i
@@ -189,7 +189,7 @@ src/AppDriver.i: src/AppDriver.c.i
 
 # target to preprocess a source file
 src/AppDriver.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/AppDriver.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/AppDriver.c.i
 .PHONY : src/AppDriver.c.i
 
 src/AppDriver.s: src/AppDriver.c.s
@@ -197,7 +197,7 @@ src/AppDriver.s: src/AppDriver.c.s
 
 # target to generate assembly for a file
 src/AppDriver.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/AppDriver.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/AppDriver.c.s
 .PHONY : src/AppDriver.c.s
 
 src/Steam.obj: src/Steam.cpp.obj
@@ -205,7 +205,7 @@ src/Steam.obj: src/Steam.cpp.obj
 
 # target to build an object file
 src/Steam.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/Steam.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/Steam.cpp.obj
 .PHONY : src/Steam.cpp.obj
 
 src/Steam.i: src/Steam.cpp.i
@@ -213,7 +213,7 @@ src/Steam.i: src/Steam.cpp.i
 
 # target to preprocess a source file
 src/Steam.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/Steam.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/Steam.cpp.i
 .PHONY : src/Steam.cpp.i
 
 src/Steam.s: src/Steam.cpp.s
@@ -221,7 +221,7 @@ src/Steam.s: src/Steam.cpp.s
 
 # target to generate assembly for a file
 src/Steam.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/Steam.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/Steam.cpp.s
 .PHONY : src/Steam.cpp.s
 
 src/Utils.obj: src/Utils.cpp.obj
@@ -229,7 +229,7 @@ src/Utils.obj: src/Utils.cpp.obj
 
 # target to build an object file
 src/Utils.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/Utils.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.obj
 .PHONY : src/Utils.cpp.obj
 
 src/Utils.i: src/Utils.cpp.i
@@ -237,7 +237,7 @@ src/Utils.i: src/Utils.cpp.i
 
 # target to preprocess a source file
 src/Utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/Utils.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.i
 .PHONY : src/Utils.cpp.i
 
 src/Utils.s: src/Utils.cpp.s
@@ -245,7 +245,7 @@ src/Utils.s: src/Utils.cpp.s
 
 # target to generate assembly for a file
 src/Utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/Utils.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.s
 .PHONY : src/Utils.cpp.s
 
 src/main.obj: src/main.cpp.obj
@@ -253,7 +253,7 @@ src/main.obj: src/main.cpp.obj
 
 # target to build an object file
 src/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/main.cpp.obj
 .PHONY : src/main.cpp.obj
 
 src/main.i: src/main.cpp.i
@@ -261,7 +261,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -269,7 +269,7 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
 # Help Target
@@ -280,7 +280,7 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... main
+	@echo ... Steam-Friends-Forever
 	@echo ... src/AdjacencyList.obj
 	@echo ... src/AdjacencyList.i
 	@echo ... src/AdjacencyList.s

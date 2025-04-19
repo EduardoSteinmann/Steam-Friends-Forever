@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.22)
-project(Project3)
+project(Steam-Friends-Forever)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -10,7 +10,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_C_FLAGS} ${GCC_COVERAGE_COMPILE_FLAGS}" )
 
 include_directories(include, lib, src)
 
-add_executable(main
+add_executable(${PROJECT_NAME}
         src/main.cpp
         src/Steam.cpp
         src/AdjacencyList.cpp
@@ -24,6 +24,19 @@ add_executable(main
         # include/Steam.hpp   
         # include/SteamUser.hpp
 )
-target_link_directories(main PUBLIC lib)
-target_include_directories(main PUBLIC include lib src)
-target_link_libraries(main libcurl SDL3 SDL3_ttf) #link catch to test.cpp file
+target_link_directories(${PROJECT_NAME} PUBLIC lib)
+target_include_directories(${PROJECT_NAME} PUBLIC include lib src)
+target_link_libraries(${PROJECT_NAME} PRIVATE libcurl raylib) #link catch to test.cpp file
+
+# Optional: platform-specific libraries (usually handled by raylib)
+if (WIN32)
+    target_link_libraries(${PROJECT_NAME} PRIVATE winmm gdi32)
+elseif(APPLE)
+    find_library(COCOA Cocoa)
+    find_library(IOKIT IOKit)
+    find_library(COREVIDEO CoreVideo)
+    find_library(OpenGL OpenGL)
+    target_link_libraries(${PROJECT_NAME} PRIVATE ${COCOA} ${IOKIT} ${COREVIDEO} ${OpenGL})
+elseif(UNIX)
+    target_link_libraries(${PROJECT_NAME} PRIVATE GL X11 pthread dl m)
+endif()

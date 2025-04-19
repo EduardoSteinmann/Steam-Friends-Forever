@@ -6,7 +6,7 @@ extern "C"
 #define CLAY_IMPLEMENTATION
 #define SDL_MAIN_HANDLED
 #include "clay.h"
-#include "clay_renderer_SDL3.c"
+#include "clay_renderer_raylib.c"
 #include <stdio.h>
 
 int app_driver()
