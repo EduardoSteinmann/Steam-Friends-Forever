@@ -6,6 +6,7 @@
 #include <cstdint>
 #include <fstream>
 #include <iostream>
+#include <queue>
 #include <unordered_map>
 #include "Common.h"
 #include "Game.hpp"
@@ -148,16 +149,65 @@ namespace Steam
             int playtime=gameJson["playtime_forever"].template get<int>();
             gameWhours.emplace_back(std::make_pair(gameID, playtime));
         }
-        //Was gonna sort based off hours but honestly why?
-        //sort(gameWhours.begin(), gameWhours.end());
+        std::sort(gameWhours.begin(), gameWhours.end(),
+              [](const std::pair<int,int>& a, const std::pair<int,int>& b) {
+                  return a.second > b.second;
+              });
+        //sorted so that the highest played games are first
         return gameWhours;
+    }
+
+    std::vector<std::string> getSortedCategories(uint64_t user_id) {
+        //Makes certain allGames is initialized
+        if (Game::allGames.size()==0)
+        {
+            Game::readGameCSV(Game::pathToCSV);
+        }
+        std::vector<std::pair<int,int>> gamesAnHours=get_users_games(user_id);
+
+        std::unordered_map<std::string,int> categoriesTotalMap;
+
+        for (auto game : gamesAnHours)
+        {
+            int id=game.first;
+
+            if (Game::allGames[id]!=NULL)
+            {
+                std::vector<std::string> thisGameCat=Game::allGames[id]->getCategories();
+                for (auto category : thisGameCat)
+                {
+                    categoriesTotalMap[category]+=game.second;
+                }
+            }
 
 
+        }
+        //START OF CODE CREATED WITH CLAUDE
+        // This sorts pairs by their second element (the int value)
+        std::priority_queue<
+            std::pair<std::string, int>,
+            std::vector<std::pair<std::string, int>>,
+            std::function<bool(const std::pair<std::string, int>&, const std::pair<std::string, int>&)>
+        > maxHeap(
+            [](const auto& a, const auto& b) {
+                return a.second < b.second;  // For a max heap based on the int value
+            }
+        );
 
-
-
+        // Insert all map elements into the priority queue
+        for (const auto& [category, count] : categoriesTotalMap) {
+            maxHeap.push({category, count});
+        }
+        //END OF CODE CREATED WITH CLAUDE
+        std::vector<std::string> topFour;
+        for (int i=0;i<4;i++) {
+            topFour.emplace_back(maxHeap.top().first);
+            maxHeap.pop();
+        }
+    return topFour;
 
     }
+
 
 
 

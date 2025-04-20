@@ -7,6 +7,7 @@
 #include <map>
 #include <set>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 namespace Game {
@@ -18,6 +19,7 @@ namespace Game {
         Game(int i, std::string name,  std::vector<std::string> inputCat);
         std::string getName();
         std::string getCategory(int index);
+        std::vector<std::string> getCategories();
         int getId();
 
     };
@@ -25,7 +27,8 @@ namespace Game {
 
     void readGameCSV(std::string path);
 
-    inline std::map<int,Game*> allGames;
+    inline std::string pathToCSV="../assets/games.csv";
+    inline std::unordered_map<int,Game*> allGames;
 }
 
 
