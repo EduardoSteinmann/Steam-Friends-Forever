@@ -19,8 +19,11 @@ void AdjacencyList::insert_user(uint64_t user_id, std::vector<SteamUser> friends
 
 void AdjacencyList::insert_friends(uint64_t user_id)
 {
-    std::vector<SteamUser> friends = Steam::get_friends(user_id);
-    this->graph.insert(std::pair<uint64_t, std::vector<SteamUser>>(user_id, friends));
+    if(this->graph.find(user_id) == this->graph.end())
+    {
+        std::vector<SteamUser> friends = Steam::get_friends(user_id);
+        this->graph.insert(std::pair<uint64_t, std::vector<SteamUser>>(user_id, friends));
+    }
 };
 
 const std::vector<SteamUser>& AdjacencyList::get_friends(uint64_t user_id)
