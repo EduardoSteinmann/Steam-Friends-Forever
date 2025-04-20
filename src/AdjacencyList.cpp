@@ -35,7 +35,7 @@ const std::vector<SteamUser>& AdjacencyList::get_friends(uint64_t user_id)
     return this->graph[user_id];
 };
 
-void AdjacencyList::display(uint64_t user_id)
+void AdjacencyList::display_user_friends(uint64_t user_id)
 {
     if (graph.find(user_id) == graph.end())
     {
@@ -43,7 +43,7 @@ void AdjacencyList::display(uint64_t user_id)
         return;
     }
     std::vector<SteamUser> friends = graph[user_id];
-    std::cout << friends[0].user_persona << std::endl;
+    std::cout << "-" << friends[0].user_persona << std::endl;
     for (int i = 1; i < friends.size(); i++)
     {
         std::cout << "\t|" << "--"  << friends[i].user_persona << std::endl;
@@ -65,6 +65,14 @@ uint64_t AdjacencyList::search(uint64_t user_id, std::string friend_id)
         }
     }
     return 0;
+}
+
+void AdjacencyList::display_graph()
+{
+    for (auto element : graph)
+    {
+        display_user_friends(element.first);
+    }
 }
 
 
