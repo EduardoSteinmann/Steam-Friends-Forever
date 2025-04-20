@@ -13,5 +13,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = @CMakeFiles/Steam-Friends-Forever.dir/includes_CXX.rsp
 
-CXX_FLAGS =  -Wall -Werror -g
+CXX_FLAGS =  -Wall -g -std=gnu++20
 

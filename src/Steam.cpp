@@ -6,7 +6,7 @@
 #include <cstdint>
 #include <fstream>
 #include <unordered_map>
-#include "Utils.hpp"
+#include "Common.h"
 
 namespace Steam
 {

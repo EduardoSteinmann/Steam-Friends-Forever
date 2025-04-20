@@ -8,6 +8,7 @@ extern "C"
 
 #define INITIAL_WINDOW_WIDTH 800
 #define INITIAL_WINDOW_HEIGHT 800
+#define MAX_QUERY 20
 
 #define SFF_DEBUG
 

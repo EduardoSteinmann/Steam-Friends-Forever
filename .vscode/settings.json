@@ -92,6 +92,7 @@
         "string.h": "c",
         "stdlib.h": "c",
         "errno.h": "c",
-        "appdriver.h": "c"
+        "appdriver.h": "c",
+        "stdarg.h": "c"
     }
 }

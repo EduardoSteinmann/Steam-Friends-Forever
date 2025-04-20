@@ -4,6 +4,7 @@ extern "C"
 #endif
 
 #include "Common.h"
+#include <stdio.h>
 #include <stdarg.h>
 
 void sff_debug_printf(const char* fmt, ...)
