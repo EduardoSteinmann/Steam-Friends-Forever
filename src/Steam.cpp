@@ -5,7 +5,7 @@
 #include <vector>
 #include <cstdint>
 #include <fstream>
-#include <iostream>
+//#include <iostream>
 #include <queue>
 #include <unordered_map>
 #include "Common.h"
@@ -62,9 +62,9 @@ namespace Steam
         curl_easy_setopt(curl_handle, CURLOPT_URL, url.c_str());
         auto error = curl_easy_perform(curl_handle);
 
-        sff_debug_printf("\nCURL RETURN CODE: %lld\n", error);
+        //sff_debug_printf("\nCURL RETURN CODE: %lld\n", error);
         
-        friends.push_back(SteamUser{ user_id });
+        //friends.push_back(SteamUser{ user_id });
 
         nlohmann::json json_response = nlohmann::json::parse(response);
 
@@ -83,11 +83,11 @@ namespace Steam
         curl_easy_setopt(curl_handle, CURLOPT_URL, url.c_str());
         curl_easy_perform(curl_handle);
 
-        sff_debug_printf("\n----------------\n");
-        sff_debug_printf("\nSTEAM API RESPONSE: %s\n", response.c_str());
+        //sff_debug_printf("\n----------------\n");
+        //sff_debug_printf("\nSTEAM API RESPONSE: %s\n", response.c_str());
 
         json_response = nlohmann::json::parse(response);
-        std::cout  << json_response.dump(4) << std::endl;
+        //std::cout  << json_response.dump(4) << std::endl;
 
         for (size_t i = 0; i < json_response["response"]["players"].size(); i++)
         {
@@ -204,8 +204,7 @@ namespace Steam
             topFour.emplace_back(maxHeap.top().first);
             maxHeap.pop();
         }
-    return topFour;
-
+        return topFour;
     }
 
 

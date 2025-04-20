@@ -58,40 +58,59 @@ void print_help()
     std::cout << "=====================================";
     std::cout << "\nAvailable Commands:\n";
     std::cout << "  cd <name>     - Change directory to <name>\n";
-    std::cout << "  cd ..         - Go back to the parent directory\n";
+    std::cout << "  cd..         - Go back to the parent directory\n";
     std::cout << "  ls            - List contents of the current directory\n";
     std::cout << "  ad            - Show all directories recursively\n";
     std::cout << "  exit          - Exit the CLI tool\n";
     std::cout << "  help          - Show this help message\n";
 }
 
-//returns 0 if command is handled otherwise -1;
-int command_handler(std::string& command)
+//returns a command code if command is known otherwise -1;
+int command_handler(std::string command)
 {
     command = trim(command);
     command = to_lower(command);
-    if (command == "exit")
+    std::vector<std::string> tokens = split_command(command);
+    if (tokens[0] == "exit")
     {
         exit(0);
     }
-    if (command == "help")
+    if (tokens[0] == "help")
     {
         print_help();
         return 0;
     }
+    if (tokens[0] == "cd")
+    {
+        if (tokens[1] == "..")
+        {
+            return 4;
+        }
+        return 1;
+    }
+    if (tokens[0] == "ls")
+    {
+        return 2;
+    }
+    if (tokens[0] == "ad")
+    {
+        return 3;
+    }
+    if (tokens[0] == "cd..")
+    {
+        return 4;
+    }
+
     return -1;
 }
 
 void adjacency_matrix_terminal()
 {
-
-}
-
-void adjacency_list_terminal()
-{
     Steam::init();
-    AdjacencyList adjacency_list;
+    AdjacencyMatrix adjacency_matrix;
+    std::vector<uint64_t> heirarchy = {};
     std::string steam_user = "";
+    //while loop for initial person we insert;
     while (steam_user.empty() == true)
     {
         std::cout <<"\n  Enter Steam User ID \n";
@@ -100,7 +119,8 @@ void adjacency_list_terminal()
         {
             uint64_t Id = std::stoull(steam_user);
             std::vector<SteamUser> friends = Steam::get_friends(Id);
-            adjacency_list.insert_user(Id , friends);
+            adjacency_matrix.insert(Id , friends);
+            heirarchy.push_back(Id);
         }
         catch (const std::exception& e)
         {
@@ -117,7 +137,90 @@ void adjacency_list_terminal()
 
         }
     }
+    //while loop for rest of command and app runtime
+}
 
+void adjacency_list_terminal()
+{
+    Steam::init();
+    AdjacencyList adjacency_list;
+    std::vector<uint64_t> heirarchy = {};
+    std::string steam_user = "";
+    //while loop for initial person we insert;
+    while (steam_user.empty() == true)
+    {
+        std::cout <<"\n  Enter Steam User ID \n";
+        std::getline(std::cin , steam_user);
+        try
+        {
+            uint64_t Id = std::stoull(steam_user);
+            std::vector<SteamUser> friends = Steam::get_friends(Id);
+            adjacency_list.insert_user(Id , friends);
+            heirarchy.push_back(Id);
+        }
+        catch (const std::exception& e)
+        {
+            int handled = command_handler(steam_user);
+            if (handled == -1)
+            {
+                std::cout << "\nInvalid Input\n" << "Steam User Id's Only Include Numbers\n";
+                steam_user = "";
+            }
+            else
+            {
+                steam_user = "";
+            }
+
+        }
+    }
+    //while loop for rest of command and app runtime
+    std::string command = "";
+    while (true)
+    {
+        std::cout <<">> ";
+        std::getline(std::cin , command);
+        int code = command_handler(command);
+        if (code == -1)
+        {
+            std::cout << "\nInvalid Input\n";
+            command = "";
+        }
+        if (code == 1)
+        {
+            //command is cd, get user id after cd and search for it in the current users friends and go to that user
+            //if found go to that user
+            std::vector<std::string> tokens = split_command(command);
+            std::string destination = command.substr(command.find(tokens[0]) + tokens[0].size() + 1);
+            std::cout <<"\nDestination User ID: " << destination << "\n";
+            uint64_t success = adjacency_list.search(heirarchy[heirarchy.size()-1],destination);
+            if (success == 0)
+            {
+                std::cout << "\nFriends not Found\n";
+            }
+            else
+            {
+                std::vector<SteamUser> friends = Steam::get_friends(success);
+                adjacency_list.insert_user(success , friends);
+                heirarchy.push_back(success);
+            }
+
+        }
+        else if (code == 2)
+        {
+            //command is ls, display the current users friends
+            adjacency_list.display(heirarchy[heirarchy.size() - 1]);
+
+        }
+        else if (code == 3)
+        {
+            //command is ad display the whole graph
+
+        }
+        else if (code == 4)
+        {
+            heirarchy.pop_back();
+        }
+    }
 }
 
 int get_data_structure()
