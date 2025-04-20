@@ -9,22 +9,24 @@
 #include <string>
 #include <vector>
 
+namespace Game {
+    class Game {
+        int id=-1;
+        std::string name;
+        std::vector<std::string> categories;
+    public:
+        Game(int i, std::string name,  std::vector<std::string> inputCat);
+        std::string getName();
+        std::string getCategory(int index);
+        int getId();
 
-class Game {
-  int id=-1;
-  std::string name;
-  std::vector<std::string> categories;
-public:
-  Game(int i, std::string name,  std::vector<std::string> inputCat);
-  std::string getName();
-  std::string getCategory(int index);
-  int getId();
+    };
+    //inline std::vector<auto> all_games;
 
-};
-//inline std::vector<auto> all_games;
+    void readGameCSV(std::string path);
 
-void readGameCSV(std::string path);
+    inline std::map<int,Game*> allGames;
+}
 
-inline std::map<int,Game*> allGames;
 
 #endif //GAME_H

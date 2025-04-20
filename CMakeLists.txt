@@ -17,7 +17,7 @@ add_executable(${PROJECT_NAME}
         src/AdjacencyMatrix.cpp
         src/Common.c
         src/AppDriver.c
-        # src/Game.cpp
+        src/Game.cpp
         # include/AdjacencyList.hpp   
         # include/AdjacencyMatrix.hpp   
         # include/Game.hpp    
