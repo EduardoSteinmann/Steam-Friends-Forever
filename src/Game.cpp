@@ -22,6 +22,10 @@ namespace Game{
     std::string Game::getCategory(int index) {
         return this->categories[index];
     }
+    std::vector<std::string> Game::getCategories() {
+        return this->categories;
+    }
+
     std::string Game::getName() {
         return this->name;
     }
@@ -43,7 +47,10 @@ namespace Game{
         //std::vector<std::string> categories = doc.GetColumn<std::string>("Categories");
         //std::vector<std::string> genres = doc.GetColumn<std::string>("Genres");
         //I think the library is off somehow, b/c I think tags and genres are swapped
-        std::vector<std::string> tags = doc.GetColumn<std::string>("Tags");
+        //std::vector<std::string> tags = doc.GetColumn<std::string>("Tags");
+        //They fucked it up and somehow the screenshot column is actually tags of the game
+        std::vector<std::string> tags = doc.GetColumn<std::string>("Screenshots");
+
         std::cout <<"Tags Read"<<std::endl;
 
 
@@ -58,6 +65,7 @@ namespace Game{
         int interval=totalGames/10;
         for (int i = 0; i < totalGames; ++i) {
             int id=stoi(appIDs[i]);
+
             std::string name = names[i];
             std::string gameTags = tags[i];
             std::vector<std::string> categories;
@@ -66,25 +74,18 @@ namespace Game{
                 std::string eachTag=gameTags.substr(0, gameTags.find(","));
                 gameTags=gameTags.substr(gameTags.find(",")+1);
                 if (gameTags.find(",")== std::string::npos) {
-                    std::string eachTag=gameTags;
+                    eachTag=gameTags;
                     gameTags="";
 
                 }
-                categories.emplace_back(gameTags);
+                categories.emplace_back(eachTag);
             }
 
             Game* temp= new Game(id,name,categories);
             std::pair<int, Game*> toInsert= std::make_pair(id,temp);
             allGames.insert(toInsert);
-
-
         }
-
-
-
-
     }
-
 }
 
 

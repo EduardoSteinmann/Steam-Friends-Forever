@@ -23,6 +23,8 @@ namespace Steam
     //Returns of a vector of first the appID associated with a game
     //and then amount of hours a user has playeed in that game
     std::vector<std::pair<int,int>> get_users_games(uint64_t user_id);
+    //sorts the categories of auser based off their playtime.
+    std::vector<std::string> getSortedCategories(uint64_t user_id);
 
 
 };
