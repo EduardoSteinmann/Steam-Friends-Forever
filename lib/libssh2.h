@@ -1440,7 +1440,7 @@ libssh2_agent_free(LIBSSH2_AGENT *agent);
 /*
  * libssh2_agent_set_identity_path()
  *
- * Allows a custom agent identity socket path beyond SSH_AUTH_SOCK env
+ * Allows a custom agent identity socket path beyond SSH_AUTH_SOCK .env
  *
  */
 LIBSSH2_API void
