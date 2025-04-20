@@ -200,6 +200,30 @@ src/AppDriver.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/AppDriver.c.s
 .PHONY : src/AppDriver.c.s
 
+src/Common.obj: src/Common.c.obj
+.PHONY : src/Common.obj
+
+# target to build an object file
+src/Common.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.obj
+.PHONY : src/Common.c.obj
+
+src/Common.i: src/Common.c.i
+.PHONY : src/Common.i
+
+# target to preprocess a source file
+src/Common.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.i
+.PHONY : src/Common.c.i
+
+src/Common.s: src/Common.c.s
+.PHONY : src/Common.s
+
+# target to generate assembly for a file
+src/Common.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.s
+.PHONY : src/Common.c.s
+
 src/Steam.obj: src/Steam.cpp.obj
 .PHONY : src/Steam.obj
 
@@ -223,30 +247,6 @@ src/Steam.s: src/Steam.cpp.s
 src/Steam.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/Steam.cpp.s
 .PHONY : src/Steam.cpp.s
-
-src/Utils.obj: src/Utils.cpp.obj
-.PHONY : src/Utils.obj
-
-# target to build an object file
-src/Utils.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.obj
-.PHONY : src/Utils.cpp.obj
-
-src/Utils.i: src/Utils.cpp.i
-.PHONY : src/Utils.i
-
-# target to preprocess a source file
-src/Utils.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.i
-.PHONY : src/Utils.cpp.i
-
-src/Utils.s: src/Utils.cpp.s
-.PHONY : src/Utils.s
-
-# target to generate assembly for a file
-src/Utils.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.s
-.PHONY : src/Utils.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
@@ -290,12 +290,12 @@ help:
 	@echo ... src/AppDriver.obj
 	@echo ... src/AppDriver.i
 	@echo ... src/AppDriver.s
+	@echo ... src/Common.obj
+	@echo ... src/Common.i
+	@echo ... src/Common.s
 	@echo ... src/Steam.obj
 	@echo ... src/Steam.i
 	@echo ... src/Steam.s
-	@echo ... src/Utils.obj
-	@echo ... src/Utils.i
-	@echo ... src/Utils.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

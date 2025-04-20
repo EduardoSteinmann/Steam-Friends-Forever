@@ -25,9 +25,9 @@
 },
 {
   "directory": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/build",
-  "command": "C:\\mingw64\\bin\\g++.exe  @CMakeFiles/Steam-Friends-Forever.dir/includes_CXX.rsp  -Wall -Werror -g -o CMakeFiles\\Steam-Friends-Forever.dir\\src\\Utils.cpp.obj -c C:\\Users\\edwar\\UF\\COP3530\\Steam-Friends-Forever\\Steam-Friends-Forever\\src\\Utils.cpp",
-  "file": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/Utils.cpp",
-  "output": "CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.obj"
+  "command": "C:\\mingw64\\bin\\gcc.exe  @CMakeFiles/Steam-Friends-Forever.dir/includes_C.rsp -g -o CMakeFiles\\Steam-Friends-Forever.dir\\src\\Common.c.obj -c C:\\Users\\edwar\\UF\\COP3530\\Steam-Friends-Forever\\Steam-Friends-Forever\\src\\Common.c",
+  "file": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/Common.c",
+  "output": "CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.obj"
 },
 {
   "directory": "C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/build",

@@ -1,5 +1,9 @@
-#include "Utils.hpp"
-#include "Steam.hpp"
+#ifdef __cplusplus
+extern "C" 
+{
+#endif
+
+#include "Common.h"
 #include <stdarg.h>
 
 void sff_debug_printf(const char* fmt, ...)
@@ -11,3 +15,7 @@ void sff_debug_printf(const char* fmt, ...)
     va_end(arg_list);
     #endif
 }
+
+#ifdef __cplusplus
+}
+#endif

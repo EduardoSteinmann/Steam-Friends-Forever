@@ -128,20 +128,20 @@ CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyMatrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyMatrix.cpp.s"
 	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\src\AdjacencyMatrix.cpp -o CMakeFiles\Steam-Friends-Forever.dir\src\AdjacencyMatrix.cpp.s
 
-CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.obj: CMakeFiles/Steam-Friends-Forever.dir/flags.make
-CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.obj: CMakeFiles/Steam-Friends-Forever.dir/includes_CXX.rsp
-CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.obj: C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/Utils.cpp
-CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.obj: CMakeFiles/Steam-Friends-Forever.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.obj"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.obj -MF CMakeFiles\Steam-Friends-Forever.dir\src\Utils.cpp.obj.d -o CMakeFiles\Steam-Friends-Forever.dir\src\Utils.cpp.obj -c C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\src\Utils.cpp
+CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.obj: CMakeFiles/Steam-Friends-Forever.dir/flags.make
+CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.obj: CMakeFiles/Steam-Friends-Forever.dir/includes_C.rsp
+CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.obj: C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/src/Common.c
+CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.obj: CMakeFiles/Steam-Friends-Forever.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.obj"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.obj -MF CMakeFiles\Steam-Friends-Forever.dir\src\Common.c.obj.d -o CMakeFiles\Steam-Friends-Forever.dir\src\Common.c.obj -c C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\src\Common.c
 
-CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.i"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\src\Utils.cpp > CMakeFiles\Steam-Friends-Forever.dir\src\Utils.cpp.i
+CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.i"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\src\Common.c > CMakeFiles\Steam-Friends-Forever.dir\src\Common.c.i
 
-CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.s"
-	C:\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\src\Utils.cpp -o CMakeFiles\Steam-Friends-Forever.dir\src\Utils.cpp.s
+CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.s"
+	C:\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S C:\Users\edwar\UF\COP3530\Steam-Friends-Forever\Steam-Friends-Forever\src\Common.c -o CMakeFiles\Steam-Friends-Forever.dir\src\Common.c.s
 
 CMakeFiles/Steam-Friends-Forever.dir/src/AppDriver.c.obj: CMakeFiles/Steam-Friends-Forever.dir/flags.make
 CMakeFiles/Steam-Friends-Forever.dir/src/AppDriver.c.obj: CMakeFiles/Steam-Friends-Forever.dir/includes_C.rsp
@@ -164,7 +164,7 @@ Steam__Friends__Forever_OBJECTS = \
 "CMakeFiles/Steam-Friends-Forever.dir/src/Steam.cpp.obj" \
 "CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyList.cpp.obj" \
 "CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyMatrix.cpp.obj" \
-"CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.obj" \
+"CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.obj" \
 "CMakeFiles/Steam-Friends-Forever.dir/src/AppDriver.c.obj"
 
 # External object files for target Steam-Friends-Forever
@@ -174,7 +174,7 @@ Steam-Friends-Forever.exe: CMakeFiles/Steam-Friends-Forever.dir/src/main.cpp.obj
 Steam-Friends-Forever.exe: CMakeFiles/Steam-Friends-Forever.dir/src/Steam.cpp.obj
 Steam-Friends-Forever.exe: CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyList.cpp.obj
 Steam-Friends-Forever.exe: CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyMatrix.cpp.obj
-Steam-Friends-Forever.exe: CMakeFiles/Steam-Friends-Forever.dir/src/Utils.cpp.obj
+Steam-Friends-Forever.exe: CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.obj
 Steam-Friends-Forever.exe: CMakeFiles/Steam-Friends-Forever.dir/src/AppDriver.c.obj
 Steam-Friends-Forever.exe: CMakeFiles/Steam-Friends-Forever.dir/build.make
 Steam-Friends-Forever.exe: CMakeFiles/Steam-Friends-Forever.dir/linkLibs.rsp

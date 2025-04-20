@@ -1,8 +1,6 @@
 #ifndef _STEAM_H_
 #define _STEAM_H_
 
-#define SFF_DEBUG
-
 #include <vector>
 #include <cstdint>
 #include <string>

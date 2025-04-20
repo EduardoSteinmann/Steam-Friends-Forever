@@ -15,7 +15,7 @@ add_executable(${PROJECT_NAME}
         src/Steam.cpp
         src/AdjacencyList.cpp
         src/AdjacencyMatrix.cpp
-        src/Utils.cpp
+        src/Common.c
         src/AppDriver.c
         # src/Game.cpp
         # include/AdjacencyList.hpp   
