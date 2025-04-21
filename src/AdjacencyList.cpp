@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include "AdjacencyList.hpp"
 
+#include <chrono>
 #include <iostream>
 #include <ostream>
 
@@ -11,6 +12,7 @@
 
 void AdjacencyList::insert_user(uint64_t user_id, std::vector<SteamUser> friends)
 {
+    auto start = std::chrono::high_resolution_clock::now();
     if(this->graph.find(user_id) == this->graph.end())
     {
         this->graph.insert(std::pair<uint64_t, std::vector<SteamUser>>(user_id, friends));
@@ -19,6 +21,8 @@ void AdjacencyList::insert_user(uint64_t user_id, std::vector<SteamUser> friends
     {
         this->graph[user_id] = friends;
     }
+    auto end = std::chrono::high_resolution_clock::now();
+    this->insertion_time = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 }
 
 void AdjacencyList::insert_friends(uint64_t user_id)
@@ -44,7 +48,7 @@ void AdjacencyList::display_user_friends(uint64_t user_id)
     }
     std::vector<SteamUser> friends = graph[user_id];
     std::cout << "-" << friends[0].user_persona << std::endl;
-    for (int i = 1; i < friends.size(); i++)
+    for (size_t i = 1; i < friends.size(); i++)
     {
         std::cout << "\t|" << "--"  << friends[i].user_persona << std::endl;
     }
@@ -52,18 +56,21 @@ void AdjacencyList::display_user_friends(uint64_t user_id)
 
 uint64_t AdjacencyList::search(uint64_t user_id, std::string friend_id)
 {
+    auto start = std::chrono::high_resolution_clock::now();
     if (graph.find(user_id) == graph.end())
     {
         return 0;
     }
     std::vector<SteamUser> friends = graph[user_id];
-    for (int i = 0; i < friends.size(); i++)
+    for (size_t i = 0; i < friends.size(); i++)
     {
         if (friends[i].user_persona == friend_id)
         {
             return friends[i].user_id;
         }
     }
+    auto end = std::chrono::high_resolution_clock::now();
+    this->search_time = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
     return 0;
 }
 
@@ -75,5 +82,14 @@ void AdjacencyList::display_graph()
     }
 }
 
+int AdjacencyList::get_insertion_time()
+{
+    return this->insertion_time;
+}
+
+int AdjacencyList::get_search_time()
+{
+    return this->search_time;
+}
 
 void number_layers(int layers){};

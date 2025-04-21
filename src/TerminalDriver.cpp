@@ -60,7 +60,10 @@ void print_help()
     std::cout << "  cd <name>     - Change directory to <name>\n";
     std::cout << "  cd..         - Go back to the parent directory\n";
     std::cout << "  ls            - List contents of the current directory\n";
+    std::cout << "  la            - Shows how deep in the social network you are\n";
     std::cout << "  ad            - Show all directories recursively\n";
+    std::cout << "  ti          - shows duration of last insertion\n";
+    std::cout << "  ts          - shows duration of last search\n";
     std::cout << "  exit          - Exit the CLI tool\n";
     std::cout << "  help          - Show this help message\n";
 }
@@ -82,10 +85,14 @@ int command_handler(std::string command)
     }
     if (tokens[0] == "cd")
     {
-        if (tokens[1] == "..")
-        {
-            return 4;
+        try {
+            if (tokens.at(1) == "..") {
+                return 4;
+            }
+        } catch (std::out_of_range& e) {
+            return -1;
         }
+
         return 1;
     }
     if (tokens[0] == "ls")
@@ -100,7 +107,18 @@ int command_handler(std::string command)
     {
         return 4;
     }
-
+    if (tokens[0] == "ti")
+    {
+        return 5;
+    }
+    if (tokens[0] == "ts")
+    {
+        return 6;
+    }
+    if (tokens[0] == "la")
+    {
+        return 7;
+    }
     return -1;
 }
 
@@ -113,7 +131,8 @@ void adjacency_matrix_terminal()
     //while loop for initial person we insert;
     while (steam_user.empty() == true)
     {
-        std::cout <<"\n  Enter Steam User ID \n";
+        std::cout <<"\n-Enter Steam User ID \n";
+        std::cout << ">>";
         std::getline(std::cin , steam_user);
         try
         {
@@ -167,7 +186,7 @@ void adjacency_matrix_terminal()
             else
             {
                 bool found = false;
-                for (int i = 0; i < heirarchy.size(); i++)
+                for (size_t i = 0; i < heirarchy.size(); i++)
                 {
                     if (success == heirarchy[i])
                     {
@@ -201,6 +220,21 @@ void adjacency_matrix_terminal()
             //comand is cd..
             heirarchy.pop_back();
         }
+        else if (code == 5)
+        {
+            //time of insertion
+            std::cout << "\nLast Insertion Duration: " << adjacency_matrix.get_insertion_time() << "\n";
+        }
+        else if (code == 6)
+        {
+            //time of search
+            std::cout << "\nLast Search Duration: " << adjacency_matrix.get_search_time() << "\n";
+        }
+        else if (code == 7)
+        {
+            //layer deep
+            std::cout <<"\n" << heirarchy.size() << "social circles deep in the social network\n";
+        }
     }
 }
 
@@ -213,7 +247,8 @@ void adjacency_list_terminal()
     //while loop for initial person we insert;
     while (steam_user.empty() == true)
     {
-        std::cout <<"\n  Enter Steam User ID \n";
+        std::cout <<"\n-Enter Steam User ID \n";
+        std::cout << ">>";
         std::getline(std::cin , steam_user);
         try
         {
@@ -232,6 +267,7 @@ void adjacency_list_terminal()
             }
             else
             {
+                std::cout << "\nInvalid Input\n" << "Steam User Id's Only Include Numbers\n";
                 steam_user = "";
             }
 
@@ -265,7 +301,7 @@ void adjacency_list_terminal()
             else
             {
                 bool found = false;
-                for (int i = 0; i < heirarchy.size(); i++)
+                for (size_t i = 0; i < heirarchy.size(); i++)
                 {
                     if (success == heirarchy[i])
                     {
@@ -298,15 +334,31 @@ void adjacency_list_terminal()
         {
             heirarchy.pop_back();
         }
+        else if (code == 5)
+        {
+            //time of insertion
+            std::cout << "\nLast Insertion Duration: " << adjacency_list.get_insertion_time() << "\n";
+        }
+        else if (code == 6)
+        {
+            //time of search
+            std::cout << "\nLast Search Duration: " << adjacency_list.get_search_time() << "\n";
+        }
+        else if (code == 7)
+        {
+            //layer deep
+            std::cout <<"\n" << heirarchy.size() << "social circles deep in the social network\n";
+        }
     }
 }
 
 int get_data_structure()
 {
     std::string choice;
-    std::cout << "\nChoose a data structure to work with\n";
-    std::cout << " 1.AdjacencyList\n";
-    std::cout << " 2.AdjacencyMatrix\n";
+    std::cout << "\n-Choose a data structure to work with\n";
+    std::cout << "1.AdjacencyList\n";
+    std::cout << "2.AdjacencyMatrix\n";
+    std::cout << ">>";
     std::getline(std::cin, choice);
     try
     {
@@ -350,7 +402,7 @@ int terminalDriver()
 {
     print_welcome();
     int data_structure = get_data_structure();
-    while (data_structure == -2)
+    while (data_structure == -2 || data_structure == 3)
     {
         print_help();
         data_structure = get_data_structure();
@@ -366,10 +418,6 @@ int terminalDriver()
     else if (data_structure == 2)
     {
         adjacency_matrix_terminal();
-    }
-    else if (data_structure == 3)
-    {
-        print_help();
     }
     return 0;
 }

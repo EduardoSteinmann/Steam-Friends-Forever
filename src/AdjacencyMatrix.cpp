@@ -3,15 +3,19 @@
 #include <unordered_map>
 #include "AdjacencyMatrix.hpp"
 
+#include <chrono>
 #include <iostream>
 #include <ostream>
 
 void AdjacencyMatrix::insert(uint64_t user_id, std::vector<SteamUser> friends)
 {
+    auto start = std::chrono::high_resolution_clock::now();
     //inserting user
     insert_user(friends[0]);
     //inserting friends of user
     insert_user_friends(friends, user_id);
+    auto end = std::chrono::high_resolution_clock::now();
+    this->insertion_time = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
 }
 
 size_t AdjacencyMatrix::insert_user(SteamUser user)
@@ -59,7 +63,7 @@ void AdjacencyMatrix::display_user_friends(uint64_t user_id)
     }
     size_t user_index = index_graph[user_id].first;
     std::cout << index_graph[user_id].second << std::endl;
-    for (int i = 0; i < adj_matrix[user_index].size(); i++)
+    for (size_t i = 0; i < adj_matrix[user_index].size(); i++)
     {
         if (adj_matrix[user_index][i] == true)
         {
@@ -78,6 +82,7 @@ void AdjacencyMatrix::display_user_friends(uint64_t user_id)
 
 size_t AdjacencyMatrix::search(size_t user, std::string user_friend)
 {
+    auto start = std::chrono::high_resolution_clock::now();
     size_t user_index = index_graph[user].first;
     size_t friend_index = 0;
     size_t friend_id = 0;
@@ -90,9 +95,20 @@ size_t AdjacencyMatrix::search(size_t user, std::string user_friend)
             break;
         }
     }
+    auto end = std::chrono::high_resolution_clock::now();
+    this->search_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
     if (adj_matrix[user_index][friend_index] == true)
     {
         return friend_id;
     }
     return 0;
+}
+
+int AdjacencyMatrix::get_insertion_time()
+{
+    return this->insertion_time;
+}
+int AdjacencyMatrix::get_search_time()
+{
+    return this->search_time;
 }
