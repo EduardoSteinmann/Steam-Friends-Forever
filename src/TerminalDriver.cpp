@@ -45,6 +45,12 @@ std::vector<std::string> split_command(const std::string& input) {
     }
     return tokens;
 }
+void load_csv()
+{
+    std::cout << "Please stand by as all 93182 games are loaded";
+    Game::readGameCSV(Game::pathToCSV);
+}
+
 
 void print_welcome() {
     std::cout << "====================================\n";
@@ -67,6 +73,8 @@ void print_help()
     std::cout << "  exit          - Exit the CLI tool\n";
     std::cout << "  help          - Show this help message\n";
 }
+
+
 
 //returns a command code if command is known otherwise -1;
 int command_handler(std::string command)
@@ -124,13 +132,13 @@ int command_handler(std::string command)
 
 void adjacency_matrix_terminal()
 {
-        Steam::init();
     AdjacencyMatrix adjacency_matrix;
     std::vector<uint64_t> heirarchy = {};
     std::string steam_user = "";
     //while loop for initial person we insert;
     while (steam_user.empty() == true)
     {
+
         std::cout <<"\n-Enter Steam User ID \n";
         std::cout << ">>";
         std::getline(std::cin , steam_user);
@@ -240,7 +248,6 @@ void adjacency_matrix_terminal()
 
 void adjacency_list_terminal()
 {
-    Steam::init();
     AdjacencyList adjacency_list;
     std::vector<uint64_t> heirarchy = {};
     std::string steam_user = "";
@@ -401,6 +408,9 @@ int get_data_structure()
 int terminalDriver()
 {
     print_welcome();
+
+    Steam::init();
+    load_csv();
     int data_structure = get_data_structure();
     while (data_structure == -2 || data_structure == 3)
     {

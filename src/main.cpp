@@ -1,10 +1,15 @@
 #include <iostream>
+#include <unordered_set>
+
 #include "Steam.hpp"
 #include "AdjacencyList.hpp"
 #include "AdjacencyMatrix.hpp"
 #include "AppDriver.h"
 #include "Game.hpp"
 #include "TerminalDriver.h"
+
+
+
 int main(int argc, char* argv[])
 {
     // Steam::init();
@@ -24,6 +29,10 @@ int main(int argc, char* argv[])
     //
     //
     // Steam::deinit();
+
+    Steam::init();
+    //auto result=Steam::sortFriendsToCategories(76561198283655599,Steam::getSortedCategories(76561198283655599,4));
+
     terminalDriver();
     return 0;
 }

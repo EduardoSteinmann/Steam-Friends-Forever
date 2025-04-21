@@ -6,13 +6,14 @@
 #include <cstdint>
 #include <fstream>
 //#include <iostream>
+#include <map>
 #include <queue>
+#include <thread>
 #include <unordered_map>
 #include "Common.h"
 #include "Game.hpp"
 
-namespace Steam
-{
+namespace Steam {
     CURL* curl_handle = NULL;
     std::string response = "";
     std::string API_key = "";
@@ -54,7 +55,7 @@ namespace Steam
 
     std::vector<SteamUser> get_friends(uint64_t user_id)
     {
-       std::vector<SteamUser> friends = {};
+        std::vector<SteamUser> friends = {};
         std::string ids = std::to_string(user_id);
         std::string url =  "http://api.steampowered.com/ISteamUser/GetFriendList/v0001/?key=" + API_key + "&steamid=" + ids + "&relationship=friend";
         ids.push_back(',');
@@ -63,7 +64,7 @@ namespace Steam
         auto error = curl_easy_perform(curl_handle);
 
         //sff_debug_printf("\nCURL RETURN CODE: %lld\n", error);
-        
+
         //friends.push_back(SteamUser{ user_id });
 
         nlohmann::json json_response = nlohmann::json::parse(response);
@@ -125,19 +126,37 @@ namespace Steam
         // return username;
         return "";
     }
+    nlohmann::json requestOwnedGames(uint64_t user_id) {
+        std::string id = std::to_string(user_id);
+        std::string url =  "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=" + API_key + "&steamid=" + id;
+        nlohmann::json json_response;
+
+        bool completed = false;
+        while (!completed) {
+            try {
+                response.clear();
+                curl_easy_setopt(curl_handle, CURLOPT_URL, url.c_str());
+                auto error = curl_easy_perform(curl_handle);
+
+                sff_debug_printf("\nCURL RETURN CODE: %lld\n", error);
+                json_response = nlohmann::json::parse(response);
+                completed=true;
+                }
+            catch (...) {
+                std::this_thread::sleep_for(std::chrono::seconds(1));
+            }
+        }
+    return json_response;
+    }
+
+
+
+
+
 
 
     std::vector<std::pair<int,int>> get_users_games(uint64_t user_id) {
-        std::string id = std::to_string(user_id);
-        std::string url =  "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=" + API_key + "&steamid=" + id;
-
-        response.clear();
-        curl_easy_setopt(curl_handle, CURLOPT_URL, url.c_str());
-        auto error = curl_easy_perform(curl_handle);
-
-        sff_debug_printf("\nCURL RETURN CODE: %lld\n", error);
-
-        nlohmann::json json_response = nlohmann::json::parse(response);
+        auto json_response=requestOwnedGames(user_id);
         auto jsonGames=json_response["response"]["games"];
         //std::cout  << jsonGames.dump(2) << std::endl;
         //first val is gameID, second val  is the total hours associate with the game
@@ -150,7 +169,7 @@ namespace Steam
             gameWhours.emplace_back(std::make_pair(gameID, playtime));
         }
 
-                //sorted so that the highest played games are first. and it does it based of the second value in the opair
+        //sorted so that the highest played games are first. and it does it based of the second value in the opair
         std::sort(gameWhours.begin(), gameWhours.end(),
               [](const std::pair<int,int>& a, const std::pair<int,int>& b) {
                   return a.second > b.second;
@@ -158,7 +177,7 @@ namespace Steam
         return gameWhours;
     }
 
-    std::vector<std::string> getSortedCategories(uint64_t user_id) {
+    std::vector<std::string> getSortedCategories(uint64_t user_id,int amountOfCategories) {
         //Makes certain allGames is initialized
         if (Game::allGames.size()==0)
         {
@@ -201,17 +220,41 @@ namespace Steam
         }
         //END OF CODE CREATED WITH CLAUDE
 
-        std::vector<std::string> topFour;
-        for (int i=0;i<4;i++) {
-            topFour.emplace_back(maxHeap.top().first);
+        std::vector<std::string> top;
+        for (int i=0;i<amountOfCategories && maxHeap.size()>0;i++) {
+
+            top.emplace_back(maxHeap.top().first);
             maxHeap.pop();
         }
-        return topFour;
+
+        return top;
     }
 
+    std::map<std::string, std::vector<uint64_t>> sortFriendsToCategories(
+        uint64_t user_id, std::vector<std::string> categories)
+    {
+        std::map<std::string, std::vector<uint64_t>> sorted;
 
+        auto friends=get_friends(user_id);
+        for (SteamUser eachFriend:friends)
+        {
+            //1000 so it gets all the categories for each game b/c there os a max of 1000
+            auto friendsCategories=getSortedCategories(eachFriend.user_id,1000);
+            //this goes through all the categories from highest to lowest of a friend
+            bool foundCommon=false;
+            for (int i=0;i<friendsCategories.size() && !foundCommon;i++) {
 
+                for (int e=0;e<categories.size();e++) {
+                    if (friendsCategories[i]==categories[e]) {
+                        foundCommon=true;
+                        sorted[categories[e]].push_back(eachFriend.user_id);
+                    }
+                }
+            }
+        }
+    return sorted;
 
+    }
 
 
 };
