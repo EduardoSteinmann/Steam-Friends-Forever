@@ -3,19 +3,22 @@
 #include <unordered_map>
 #include "AdjacencyMatrix.hpp"
 
+#include <iostream>
+#include <ostream>
+
 void AdjacencyMatrix::insert(uint64_t user_id, std::vector<SteamUser> friends)
 {
     //inserting user
-    insert_user(user_id);
+    insert_user(friends[0]);
     //inserting friends of user
     insert_user_friends(friends, user_id);
 }
 
-size_t AdjacencyMatrix::insert_user(uint64_t user_id)
+size_t AdjacencyMatrix::insert_user(SteamUser user)
 {
-    if(index_graph.find(user_id) == index_graph.end())
+    if(index_graph.find(user.user_id) == index_graph.end())
     {
-        index_graph[user_id] = adj_matrix.size();
+        index_graph[user.user_id] = std::pair<size_t, std::string>(adj_matrix.size(),user.user_persona);
         adj_matrix.emplace_back(std::vector<bool>{});
 
         //puts false for edges of newest vertex with rest of the graph
@@ -28,19 +31,68 @@ size_t AdjacencyMatrix::insert_user(uint64_t user_id)
             }
         }
     }
-    return index_graph[user_id];
+    return index_graph[user.user_id].first;
 }
 
 void AdjacencyMatrix::insert_user_friends(std::vector<SteamUser>& friends , uint64_t user_id)
 {
-    size_t user_index = index_graph[user_id];
+    size_t user_index = index_graph[user_id].first;
     for(size_t i = 1; i < friends.size(); i++)
     {
         auto& user = friends[i];
 
-        size_t friend_index = insert_user(user.user_id);
+        size_t friend_index = insert_user(user);
         
         adj_matrix[user_index][friend_index] = true;
         adj_matrix[friend_index][user_index] = true;
     }
+}
+
+
+//TODO FIND BETTER ALGO FOR FINDING FRIEND NAME
+void AdjacencyMatrix::display_user_friends(uint64_t user_id)
+{
+    if(index_graph.find(user_id) == index_graph.end())
+    {
+        std::cout << "User " << user_id << " does not exist" << std::endl;
+        return;
+    }
+    size_t user_index = index_graph[user_id].first;
+    std::cout << index_graph[user_id].second << std::endl;
+    for (int i = 0; i < adj_matrix[user_index].size(); i++)
+    {
+        if (adj_matrix[user_index][i] == true)
+        {
+            for (auto element : index_graph)
+            {
+                if (element.second.first == i)
+                {
+                    std::cout << "\t|" << "--" << element.second.second << std::endl;
+                }
+            }
+        }
+    }
+}
+
+
+
+size_t AdjacencyMatrix::search(size_t user, std::string user_friend)
+{
+    size_t user_index = index_graph[user].first;
+    size_t friend_index = 0;
+    size_t friend_id = 0;
+    for (auto element : index_graph)
+    {
+        if (element.second.second == user_friend)
+        {
+            friend_id = element.first;
+            friend_index = element.second.first;
+            break;
+        }
+    }
+    if (adj_matrix[user_index][friend_index] == true)
+    {
+        return friend_id;
+    }
+    return 0;
 }

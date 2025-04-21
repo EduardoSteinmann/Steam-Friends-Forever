@@ -25,6 +25,41 @@ typedef enum UIState
     DISPLAY_USER
 } UIState;
 
+
+void search_bar(bool active)
+{
+    if (!active)
+    {
+        return;
+    }
+
+    static char searchQuery[MAX_QUERY] = {0};
+
+    int key = GetCharPressed();
+
+    while (key > 0) {
+        int len = strlen(searchQuery);
+        if (len < MAX_QUERY - 1) {
+            searchQuery[len] = (char)key;
+            searchQuery[len + 1] = '\0';
+
+        }
+        key = GetCharPressed();
+    }
+    if (IsKeyPressed(KEY_BACKSPACE)) {
+        int len = strlen(searchQuery);
+        if (len > 0) {
+            searchQuery[len - 1] = '\0';
+        }
+    }
+    if (IsKeyDown(KEY_LEFT_CONTROL) && IsKeyPressed(KEY_V)) {
+        const char* clip = GetClipboardText();
+        if (clip && strlen(clip) + strlen(searchQuery) < MAX_QUERY) {
+            strcat(searchQuery, clip);
+        }
+    }
+}
+
 static void start_screen(Clay_ImageElementConfig image)
 {
     CLAY({ .id = CLAY_ID("OuterContainer"),
@@ -69,7 +104,56 @@ static void start_screen(Clay_ImageElementConfig image)
 
 static void display_user()
 {
+    //auto font = GetFontDefault();
+    CLAY({ .id = CLAY_ID("OuterContainer"),
+        .backgroundColor = {27, 40, 56, 255},
+        .layout = {
+            .layoutDirection = CLAY_LEFT_TO_RIGHT,
+            .sizing = {
+                CLAY_SIZING_GROW(0),
+                CLAY_SIZING_GROW(0)
+            },
+            .padding = CLAY_PADDING_ALL(16),
+            .childGap = 16,
+            .childAlignment = {.y = CLAY_ALIGN_Y_TOP, .x = CLAY_ALIGN_X_CENTER}
+        }
+    })
+    {
+        CLAY({.id = CLAY_ID("BackButton"),
+            .backgroundColor = {199, 213, 224, 255},
+            .layout = {
+                .layoutDirection = CLAY_LEFT_TO_RIGHT,
+                .sizing = {
+                    .height = 32,
+                    .width = 32,
+                },
+                .padding = CLAY_PADDING_ALL(4),
+                 .childGap = 16,
+                .childAlignment = {.y = CLAY_ALIGN_Y_TOP, .x = CLAY_ALIGN_X_CENTER}
+            },
+            .cornerRadius = 8,
 
+        })
+        {
+            CLAY_TEXT(CLAY_STRING("Back") , CLAY_TEXT_CONFIG({.fontId = FONT_DEFAULT, .fontSize = 16, .textColor = {0,0,0,255}}));
+        }
+        CLAY({.id = CLAY_ID("SearchBar"),
+            .backgroundColor = {199, 213, 224, 255},
+            .layout = {
+                .layoutDirection = CLAY_LEFT_TO_RIGHT,
+                .sizing = {
+                    .height = 32,
+                    .width = GetScreenWidth()/2,
+                },
+
+            },
+            .cornerRadius = 16,
+
+        }
+        ){}
+
+
+    }
 }
 
 static void loading_screen()
@@ -77,63 +161,13 @@ static void loading_screen()
 
 }
 
-void search_bar(bool active)
-{
-    CLAY( 
-        { 
-            .id = CLAY_ID("SearchBar"),
-            .backgroundColor = { 50, 50, 50, 255 },
-            .layout = {
-                .layoutDirection = CLAY_LEFT_TO_RIGHT,
-                .sizing = { 
-                    //width might be wrong
-                    .width = CLAY_SIZING_PERCENT(50), 
-                    .height = GetScreenHeight() / 2 
-                },
-                .padding = CLAY_PADDING_ALL(8),
-                .childGap = 8
-            } 
-        }
-    ){};
 
-    if (!active)
-    {
-        return;
-    }
-    
-    static char searchQuery[MAX_QUERY] = {0};
-
-    int key = GetCharPressed();
-
-    while (key > 0) {
-        int len = strlen(searchQuery);
-        if (len < MAX_QUERY - 1) {
-            searchQuery[len] = (char)key;
-            searchQuery[len + 1] = '\0';
-            
-        }  
-        key = GetCharPressed();
-    }
-    if (IsKeyPressed(KEY_BACKSPACE)) {
-        int len = strlen(searchQuery);
-        if (len > 0) {
-            searchQuery[len - 1] = '\0';
-        }
-    } 
-    if (IsKeyDown(KEY_LEFT_CONTROL) && IsKeyPressed(KEY_V)) {
-        const char* clip = GetClipboardText();
-        if (clip && strlen(clip) + strlen(searchQuery) < MAX_QUERY) {
-            strcat(searchQuery, clip);
-        }
-    }
-}
 
 int app_driver()
 {
-    UIState interface_state = START_SCREEN;
+    UIState interface_state = DISPLAY_USER;
     //load logo
     Image Logo = LoadImage("C:/Users/Kasra/CLionProjects/Steam-Friends-Forever/assets/Steam-Friends-Forever-Logo.png");
-
     Clay_ImageElementConfig image_config = (Clay_ImageElementConfig){
         .imageData = &Logo, .sourceDimensions = {1024, 1024}
     };
