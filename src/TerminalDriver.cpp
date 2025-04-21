@@ -152,37 +152,37 @@ void adjacency_matrix_terminal()
         }
         if (code == 1)
         {
-            // //command is cd, get user id after cd and search for it in the current users friends and go to that user
-            // //if found go to that user
-            // std::vector<std::string> tokens = split_command(command);
-            // std::string destination = command.substr(command.find(tokens[0]) + tokens[0].size() + 1);
-            // std::cout <<"\nDestination User ID: " << destination << "\n";
-            // //TODO FIX
-            // uint64_t success = adjacency_matrix.search(heirarchy[heirarchy.size()-1],destination);
-            //
-            // if (success == 0)
-            // {
-            //     std::cout << "\nFriends not Found\n";
-            // }
-            // else
-            // {
-            //     bool found = false;
-            //     for (int i = 0; i < heirarchy.size(); i++)
-            //     {
-            //         if (success == heirarchy[i])
-            //         {
-            //             heirarchy.erase(heirarchy.begin() + i + 1, heirarchy.end());
-            //             found = true;
-            //             std::cout << "\nAllready visited\n";
-            //         }
-            //     }
-            //     if (!found){
-            //         std::vector<SteamUser> friends = Steam::get_friends(success);
-            //         adjacency_matrix.insert(success , friends);
-            //         heirarchy.push_back(success);
-            //
-            //     }
-            // }
+            //command is cd, get user id after cd and search for it in the current users friends and go to that user
+            //if found go to that user
+            std::vector<std::string> tokens = split_command(command);
+            std::string destination = command.substr(command.find(tokens[0]) + tokens[0].size() + 1);
+            std::cout <<"\nDestination User ID: " << destination << "\n";
+            //TODO FIX
+            uint64_t success = adjacency_matrix.search(heirarchy[heirarchy.size()-1],destination);
+
+            if (success == 0)
+            {
+                std::cout << "\nFriends not Found\n";
+            }
+            else
+            {
+                bool found = false;
+                for (int i = 0; i < heirarchy.size(); i++)
+                {
+                    if (success == heirarchy[i])
+                    {
+                        heirarchy.erase(heirarchy.begin() + i + 1, heirarchy.end());
+                        found = true;
+                        std::cout << "\nAllready visited\n";
+                    }
+                }
+                if (!found){
+                    std::vector<SteamUser> friends = Steam::get_friends(success);
+                    adjacency_matrix.insert(success , friends);
+                    heirarchy.push_back(success);
+
+                }
+            }
         }
         else if (code == 2)
         {
