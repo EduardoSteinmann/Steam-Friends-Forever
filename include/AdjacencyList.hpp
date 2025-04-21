@@ -10,8 +10,8 @@
 class AdjacencyList
 {
     private:
-    time_t insertion_time = 0;
-    time_t search_time = 0;
+    int insertion_time = 0;
+    int search_time = 0;
     //first object in the vector is the user itself
     std::unordered_map<uint64_t , std::vector<SteamUser>> graph;
 

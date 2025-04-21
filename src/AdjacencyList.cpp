@@ -70,7 +70,7 @@ uint64_t AdjacencyList::search(uint64_t user_id, std::string friend_id)
         }
     }
     auto end = std::chrono::high_resolution_clock::now();
-    this->search_time = std::chrono::duration_cast<std::chrono::microseconds>(end - start).count();
+    this->search_time = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
     return 0;
 }
 

@@ -19,8 +19,8 @@ class AdjacencyMatrix
 
     private:
     size_t user_count = 0;
-    time_t insertion_time = 0;
-    time_t search_time = 0;
+    int insertion_time = 0;
+    int search_time = 0;
     std::unordered_map<uint64_t, std::pair<size_t, std::string>> index_graph;
     std::vector<std::vector<bool>> adj_matrix;
     size_t insert_user(SteamUser user);

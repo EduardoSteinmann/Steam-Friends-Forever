@@ -337,12 +337,12 @@ void adjacency_list_terminal()
         else if (code == 5)
         {
             //time of insertion
-            std::cout << "\nLast Insertion Duration: " << adjacency_list.get_insertion_time() << "\n";
+            std::cout << "\nLast Insertion Duration: " << adjacency_list.get_insertion_time() << "ms\n";
         }
         else if (code == 6)
         {
             //time of search
-            std::cout << "\nLast Search Duration: " << adjacency_list.get_search_time() << "\n";
+            std::cout << "\nLast Search Duration: " << adjacency_list.get_search_time() << "ms\n";
         }
         else if (code == 7)
         {
