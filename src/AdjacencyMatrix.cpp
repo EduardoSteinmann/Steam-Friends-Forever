@@ -96,7 +96,7 @@ size_t AdjacencyMatrix::search(size_t user, std::string user_friend)
         }
     }
     auto end = std::chrono::high_resolution_clock::now();
-    this->search_time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    this->search_time = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
     if (adj_matrix[user_index][friend_index] == true)
     {
         return friend_id;

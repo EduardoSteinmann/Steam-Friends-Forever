@@ -59,6 +59,9 @@ uint64_t AdjacencyList::search(uint64_t user_id, std::string friend_id)
     auto start = std::chrono::high_resolution_clock::now();
     if (graph.find(user_id) == graph.end())
     {
+
+        auto end = std::chrono::high_resolution_clock::now();
+        this->search_time = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
         return 0;
     }
     std::vector<SteamUser> friends = graph[user_id];
@@ -66,6 +69,8 @@ uint64_t AdjacencyList::search(uint64_t user_id, std::string friend_id)
     {
         if (friends[i].user_persona == friend_id)
         {
+            auto end = std::chrono::high_resolution_clock::now();
+            this->search_time = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
             return friends[i].user_id;
         }
     }
