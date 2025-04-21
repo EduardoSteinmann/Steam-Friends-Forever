@@ -154,7 +154,7 @@ namespace Steam {
 
 
 
-
+    //good
     std::vector<std::pair<int,int>> get_users_games(uint64_t user_id) {
         auto json_response=requestOwnedGames(user_id);
         auto jsonGames=json_response["response"]["games"];
@@ -176,13 +176,14 @@ namespace Steam {
               });
         return gameWhours;
     }
-
+    //gets the categories with most hours spent in
     std::vector<std::string> getSortedCategories(uint64_t user_id,int amountOfCategories) {
         //Makes certain allGames is initialized
         if (Game::allGames.size()==0)
         {
             Game::readGameCSV(Game::pathToCSV);
         }
+        //cacheable
         std::vector<std::pair<int,int>> gamesAnHours=get_users_games(user_id);
         std::unordered_map<std::string,int> categoriesTotalMap;
 
@@ -234,7 +235,7 @@ namespace Steam {
         uint64_t user_id, std::vector<std::string> categories)
     {
         std::map<std::string, std::vector<uint64_t>> sorted;
-
+        //waste of API we have friends of user already
         auto friends=get_friends(user_id);
         for (SteamUser eachFriend:friends)
         {
@@ -252,8 +253,7 @@ namespace Steam {
                 }
             }
         }
-    return sorted;
-
+        return sorted;
     }
 
 

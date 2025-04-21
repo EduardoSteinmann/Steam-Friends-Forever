@@ -46,8 +46,7 @@ void AdjacencyList::display_user_friends(uint64_t user_id)
         std::cout << "User " << user_id << " does not exist" << std::endl;
         return;
     }
-    auto categoriesWithFriends=
-        Steam::sortFriendsToCategories(user_id,Steam::getSortedCategories(user_id,4));
+    auto categoriesWithFriends = Steam::sortFriendsToCategories(user_id,Steam::getSortedCategories(user_id,4));
     std::vector<SteamUser> friends = graph[user_id];
 
     std::cout << "-" << friends[0].user_persona << std::endl;

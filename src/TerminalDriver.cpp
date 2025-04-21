@@ -20,6 +20,23 @@
 #define BOLDWHITE   "\033[1m\033[37m"
 
 
+enum STATE
+{
+    LS,
+    CDOT,
+    CD,
+    TI,
+    TS,
+    AD,
+    LA,
+    EXIT,
+    HELP,
+    INVALID,
+    NONE,
+    ADJMATRIX,
+    ADJLIST
+};
+
 //input to all lower case
 std::string to_lower(const std::string& input)
 {
@@ -45,12 +62,12 @@ std::vector<std::string> split_command(const std::string& input) {
     }
     return tokens;
 }
+
 void load_csv()
 {
-    std::cout << "Please stand by as all 93182 games are loaded";
+    std::cout << "\nPlease stand by as all 93182 games are loaded\n";
     Game::readGameCSV(Game::pathToCSV);
 }
-
 
 void print_welcome() {
     std::cout << "====================================\n";
@@ -77,7 +94,7 @@ void print_help()
 
 
 //returns a command code if command is known otherwise -1;
-int command_handler(std::string command)
+STATE command_handler(std::string command)
 {
     command = trim(command);
     command = to_lower(command);
@@ -89,45 +106,45 @@ int command_handler(std::string command)
     if (tokens[0] == "help")
     {
         print_help();
-        return 0;
+        return STATE::HELP;
     }
     if (tokens[0] == "cd")
     {
         try {
             if (tokens.at(1) == "..") {
-                return 4;
+                return STATE::CDOT;
             }
         } catch (std::out_of_range& e) {
-            return -1;
+            return STATE::INVALID;
         }
 
-        return 1;
+        return STATE::CD;
     }
     if (tokens[0] == "ls")
     {
-        return 2;
+        return STATE::LS;
     }
     if (tokens[0] == "ad")
     {
-        return 3;
+        return STATE::AD;
     }
     if (tokens[0] == "cd..")
     {
-        return 4;
+        return STATE::CDOT;
     }
     if (tokens[0] == "ti")
     {
-        return 5;
+        return STATE::TI;
     }
     if (tokens[0] == "ts")
     {
-        return 6;
+        return STATE::TS;
     }
     if (tokens[0] == "la")
     {
-        return 7;
+        return STATE::LA;
     }
-    return -1;
+    return STATE::INVALID;
 }
 
 void adjacency_matrix_terminal()
@@ -152,8 +169,8 @@ void adjacency_matrix_terminal()
         }
         catch (const std::exception& e)
         {
-            int handled = command_handler(steam_user);
-            if (handled == -1)
+            STATE handled = command_handler(steam_user);
+            if (handled == STATE::INVALID)
             {
                 std::cout << "\nInvalid Input\n" << "Steam User Id's Only Include Numbers\n";
                 steam_user = "";
@@ -171,13 +188,13 @@ void adjacency_matrix_terminal()
     {
         std::cout <<">> ";
         std::getline(std::cin , command);
-        int code = command_handler(command);
-        if (code == -1)
+        STATE code = command_handler(command);
+        if (code == STATE::INVALID)
         {
             std::cout << "\nInvalid Input\n";
             command = "";
         }
-        if (code == 1)
+        if (code == STATE::CD)
         {
             //command is cd, get user id after cd and search for it in the current users friends and go to that user
             //if found go to that user
@@ -211,34 +228,34 @@ void adjacency_matrix_terminal()
                 }
             }
         }
-        else if (code == 2)
+        else if (code == STATE::LS)
         {
             //command is ls, display the current users friends
             adjacency_matrix.display_user_friends(heirarchy[heirarchy.size() - 1]);
 
         }
-        else if (code == 3)
+        else if (code == STATE::AD)
         {
             //command is ad display the whole graph
             //adjacency_matrix.display_graph();
 
         }
-        else if (code == 4)
+        else if (code == STATE::CDOT)
         {
             //comand is cd..
             heirarchy.pop_back();
         }
-        else if (code == 5)
+        else if (code == STATE::TI)
         {
             //time of insertion
             std::cout << "\nLast Insertion Duration: " << adjacency_matrix.get_insertion_time() << "ns\n";
         }
-        else if (code == 6)
+        else if (code == STATE::TS)
         {
             //time of search
             std::cout << "\nLast Search Duration: " << adjacency_matrix.get_search_time() << "ns\n";
         }
-        else if (code == 7)
+        else if (code == STATE::LA)
         {
             //layer deep
             std::cout <<"\n" << heirarchy.size() << "social circles deep in the social network\n";
@@ -286,13 +303,13 @@ void adjacency_list_terminal()
     {
         std::cout <<">> ";
         std::getline(std::cin , command);
-        int code = command_handler(command);
-        if (code == -1)
+        STATE code = command_handler(command);
+        if (code == STATE::INVALID)
         {
             std::cout << "\nInvalid Input\n";
             command = "";
         }
-        if (code == 1)
+        if (code == STATE::CD)
         {
             //command is cd, get user id after cd and search for it in the current users friends and go to that user
             //if found go to that user
@@ -325,33 +342,33 @@ void adjacency_list_terminal()
                 }
             }
         }
-        else if (code == 2)
+        else if (code == STATE::LS)
         {
             //command is ls, display the current users friends
             adjacency_list.display_user_friends(heirarchy[heirarchy.size() - 1]);
 
         }
-        else if (code == 3)
+        else if (code == STATE::AD)
         {
             //command is ad display the whole graph
             adjacency_list.display_graph();
 
         }
-        else if (code == 4)
+        else if (code == STATE::CDOT)
         {
             heirarchy.pop_back();
         }
-        else if (code == 5)
+        else if (code == STATE::TI)
         {
             //time of insertion
             std::cout << "\nLast Insertion Duration: " << adjacency_list.get_insertion_time() << "ns\n";
         }
-        else if (code == 6)
+        else if (code == STATE::TS)
         {
             //time of search
             std::cout << "\nLast Search Duration: " << adjacency_list.get_search_time() << "ns\n";
         }
-        else if (code == 7)
+        else if (code == STATE::LA)
         {
             //layer deep
             std::cout <<"\n" << heirarchy.size() << "social circles deep in the social network\n";
@@ -359,7 +376,7 @@ void adjacency_list_terminal()
     }
 }
 
-int get_data_structure()
+STATE get_data_structure()
 {
     std::string choice;
     std::cout << "\n-Choose a data structure to work with\n";
@@ -372,13 +389,13 @@ int get_data_structure()
         int num = std::stoi(choice);
         if (num == 1)
         {
-            return 1;
+            return STATE::ADJLIST;
         }
         if (num == 2)
         {
-            return 2;
+            return STATE::ADJMATRIX;
         }
-        return 0;
+        return STATE::NONE;
     }
     catch (std::invalid_argument &e)
     {
@@ -386,22 +403,22 @@ int get_data_structure()
 
         if (choice == "adjacencylist")
         {
-            return 1;
+            return STATE::ADJLIST;
         }
         if (choice == "adjacencymatrix")
         {
-            return 2;
+            return STATE::ADJMATRIX;
         }
         if (choice == "exit")
         {
-            return -1;
+            return STATE::EXIT;
         }
         if (choice == "help")
         {
-            return 3;
+            return STATE::HELP;
         }
         std::cout << "\nInvalid Commad\n";
-        return -2;
+        return STATE::INVALID;
     }
 }
 
@@ -411,21 +428,21 @@ int terminalDriver()
 
     Steam::init();
     load_csv();
-    int data_structure = get_data_structure();
-    while (data_structure == -2 || data_structure == 3)
+    STATE data_structure = get_data_structure();
+    while (data_structure == STATE::INVALID || data_structure == STATE::HELP || data_structure == STATE::NONE)
     {
         print_help();
         data_structure = get_data_structure();
     }
-    if (data_structure == -1)
+    if (data_structure == STATE::EXIT)
     {
         exit(0);
     }
-    if (data_structure == 1)
+    if (data_structure == STATE::ADJLIST)
     {
         adjacency_list_terminal();
     }
-    else if (data_structure == 2)
+    else if (data_structure == STATE::ADJMATRIX)
     {
         adjacency_matrix_terminal();
     }

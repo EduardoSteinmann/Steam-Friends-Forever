@@ -24,9 +24,9 @@ class AdjacencyList
     void display_user_friends(uint64_t user_id);
     //displays the whole graph
     void display_graph();
-
     //searches for a users friend;
     uint64_t search(uint64_t user_id, std::string friend_id);
+
     const std::vector<SteamUser>& get_friends(uint64_t user_id);
 
     int get_insertion_time();
