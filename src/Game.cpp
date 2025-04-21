@@ -35,7 +35,6 @@ namespace Game{
 
     void readGameCSV(std::string path) {
 
-        //TODO multithread this
         std::cout <<"Reading game CSV file"<<std::endl;
         rapidcsv::Document doc(path);
         std::vector<std::string> appIDs = doc.GetColumn<std::string>("AppID");
@@ -66,11 +65,11 @@ namespace Game{
         for (int i = 0; i < totalGames; ++i) {
             int id=stoi(appIDs[i]);
 
+            //this little for loop sepreates all the unique genres f
             std::string name = names[i];
             std::string gameTags = tags[i];
             std::vector<std::string> categories;
             while (gameTags.length() > 0) {
-                //TODO make it so F2P and similar tags do not apply
                 std::string eachTag=gameTags.substr(0, gameTags.find(","));
                 gameTags=gameTags.substr(gameTags.find(",")+1);
                 if (gameTags.find(",")== std::string::npos) {

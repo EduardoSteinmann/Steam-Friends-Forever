@@ -140,7 +140,7 @@ namespace Steam
         nlohmann::json json_response = nlohmann::json::parse(response);
         auto jsonGames=json_response["response"]["games"];
         //std::cout  << jsonGames.dump(2) << std::endl;
-
+        //first val is gameID, second val  is the total hours associate with the game
         std::vector<std::pair<int,int>> gameWhours;
         for (int i=0;i<jsonGames.size();i++) {
             auto gameJson=jsonGames[i];
@@ -149,11 +149,12 @@ namespace Steam
             int playtime=gameJson["playtime_forever"].template get<int>();
             gameWhours.emplace_back(std::make_pair(gameID, playtime));
         }
+
+                //sorted so that the highest played games are first. and it does it based of the second value in the opair
         std::sort(gameWhours.begin(), gameWhours.end(),
               [](const std::pair<int,int>& a, const std::pair<int,int>& b) {
                   return a.second > b.second;
               });
-        //sorted so that the highest played games are first
         return gameWhours;
     }
 
@@ -164,7 +165,6 @@ namespace Steam
             Game::readGameCSV(Game::pathToCSV);
         }
         std::vector<std::pair<int,int>> gamesAnHours=get_users_games(user_id);
-
         std::unordered_map<std::string,int> categoriesTotalMap;
 
         for (auto game : gamesAnHours)
@@ -183,7 +183,8 @@ namespace Steam
 
         }
         //START OF CODE CREATED WITH CLAUDE
-        // This sorts pairs by their second element (the int value)
+        //I didn't wanna figure it out myself okay
+        // This inserts pairs by their second element (the int value)
         std::priority_queue<
             std::pair<std::string, int>,
             std::vector<std::pair<std::string, int>>,
@@ -199,6 +200,7 @@ namespace Steam
             maxHeap.push({category, count});
         }
         //END OF CODE CREATED WITH CLAUDE
+
         std::vector<std::string> topFour;
         for (int i=0;i<4;i++) {
             topFour.emplace_back(maxHeap.top().first);
