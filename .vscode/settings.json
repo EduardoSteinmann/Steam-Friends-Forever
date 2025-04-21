@@ -93,6 +93,10 @@
         "stdlib.h": "c",
         "errno.h": "c",
         "appdriver.h": "c",
-        "stdarg.h": "c"
+        "stdarg.h": "c",
+        "semaphore": "cpp",
+        "stop_token": "cpp",
+        "thread": "cpp",
+        "unordered_set": "cpp"
     }
 }

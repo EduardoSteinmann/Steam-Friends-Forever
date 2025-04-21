@@ -16,7 +16,6 @@ namespace Game{
         this->id=i;
         this->name = name;
         this->categories = inputCat;
-
     }
 
     std::string Game::getCategory(int index) {
@@ -52,35 +51,32 @@ namespace Game{
 
         std::cout <<"Tags Read"<<std::endl;
 
-
-
         //
         // auto columns= doc.GetColumnNames();
         // for (int i = 0; i < columns.size(); ++i) {
         //     std::cout << columns[i] << std::endl;
         // }
-        int totalGames=names.size();
+        int totalGames = names.size();
 
-        int interval=totalGames/10;
+        int interval = totalGames/10;
         for (int i = 0; i < totalGames; ++i) {
-            int id=stoi(appIDs[i]);
+            int id = stoi(appIDs[i]);
 
             //this little for loop sepreates all the unique genres f
             std::string name = names[i];
             std::string gameTags = tags[i];
             std::vector<std::string> categories;
             while (gameTags.length() > 0) {
-                std::string eachTag=gameTags.substr(0, gameTags.find(","));
-                gameTags=gameTags.substr(gameTags.find(",")+1);
-                if (gameTags.find(",")== std::string::npos) {
+                std::string eachTag = gameTags.substr(0, gameTags.find(","));
+                gameTags = gameTags.substr(gameTags.find(",")+1);
+                if (gameTags.find(",") == std::string::npos) {
                     eachTag=gameTags;
                     gameTags="";
-
                 }
                 categories.emplace_back(eachTag);
             }
 
-            Game* temp= new Game(id,name,categories);
+            Game* temp= new Game(id, name, categories);
             std::pair<int, Game*> toInsert= std::make_pair(id,temp);
             allGames.insert(toInsert);
         }

@@ -81,12 +81,12 @@ void print_help()
     std::cout << "=====================================";
     std::cout << "\nAvailable Commands:\n";
     std::cout << "  cd <name>     - Change directory to <name>\n";
-    std::cout << "  cd..         - Go back to the parent directory\n";
+    std::cout << "  cd..          - Go back to the parent directory\n";
     std::cout << "  ls            - List contents of the current directory\n";
     std::cout << "  la            - Shows how deep in the social network you are\n";
     std::cout << "  ad            - Show all directories recursively\n";
-    std::cout << "  ti          - shows duration of last insertion\n";
-    std::cout << "  ts          - shows duration of last search\n";
+    std::cout << "  ti            - Shows duration of last insertion\n";
+    std::cout << "  ts            - Shows duration of last search\n";
     std::cout << "  exit          - Exit the CLI tool\n";
     std::cout << "  help          - Show this help message\n";
 }
@@ -150,7 +150,7 @@ STATE command_handler(std::string command)
 void adjacency_matrix_terminal()
 {
     AdjacencyMatrix adjacency_matrix;
-    std::vector<uint64_t> heirarchy = {};
+    std::vector<uint64_t> hierarchy = {};
     std::string steam_user = "";
     //while loop for initial person we insert;
     while (steam_user.empty() == true)
@@ -165,7 +165,7 @@ void adjacency_matrix_terminal()
             std::vector<SteamUser> friends = Steam::get_friends(Id);
             //TODO FIX
             adjacency_matrix.insert(Id , friends);
-            heirarchy.push_back(Id);
+            hierarchy.push_back(Id);
         }
         catch (const std::exception& e)
         {
@@ -202,7 +202,7 @@ void adjacency_matrix_terminal()
             std::string destination = command.substr(command.find(tokens[0]) + tokens[0].size() + 1);
             std::cout <<"\nDestination User ID: " << destination << "\n";
             //TODO FIX
-            uint64_t success = adjacency_matrix.search(heirarchy[heirarchy.size()-1],destination);
+            uint64_t success = adjacency_matrix.search(hierarchy[hierarchy.size()-1],destination);
 
             if (success == 0)
             {
@@ -211,11 +211,11 @@ void adjacency_matrix_terminal()
             else
             {
                 bool found = false;
-                for (size_t i = 0; i < heirarchy.size(); i++)
+                for (size_t i = 0; i < hierarchy.size(); i++)
                 {
-                    if (success == heirarchy[i])
+                    if (success == hierarchy[i])
                     {
-                        heirarchy.erase(heirarchy.begin() + i + 1, heirarchy.end());
+                        hierarchy.erase(hierarchy.begin() + i + 1, hierarchy.end());
                         found = true;
                         std::cout << "\nAllready visited\n";
                     }
@@ -223,7 +223,7 @@ void adjacency_matrix_terminal()
                 if (!found){
                     std::vector<SteamUser> friends = Steam::get_friends(success);
                     adjacency_matrix.insert(success , friends);
-                    heirarchy.push_back(success);
+                    hierarchy.push_back(success);
 
                 }
             }
@@ -231,7 +231,7 @@ void adjacency_matrix_terminal()
         else if (code == STATE::LS)
         {
             //command is ls, display the current users friends
-            adjacency_matrix.display_user_friends(heirarchy[heirarchy.size() - 1]);
+            adjacency_matrix.display_user_friends(hierarchy[hierarchy.size() - 1]);
 
         }
         else if (code == STATE::AD)
@@ -243,7 +243,7 @@ void adjacency_matrix_terminal()
         else if (code == STATE::CDOT)
         {
             //comand is cd..
-            heirarchy.pop_back();
+            hierarchy.pop_back();
         }
         else if (code == STATE::TI)
         {
@@ -258,7 +258,7 @@ void adjacency_matrix_terminal()
         else if (code == STATE::LA)
         {
             //layer deep
-            std::cout <<"\n" << heirarchy.size() << "social circles deep in the social network\n";
+            std::cout <<"\n" << hierarchy.size() << "social circles deep in the social network\n";
         }
     }
 }
@@ -266,7 +266,7 @@ void adjacency_matrix_terminal()
 void adjacency_list_terminal()
 {
     AdjacencyList adjacency_list;
-    std::vector<uint64_t> heirarchy = {};
+    std::vector<uint64_t> hierarchy = {};
     std::string steam_user = "";
     //while loop for initial person we insert;
     while (steam_user.empty() == true)
@@ -279,7 +279,7 @@ void adjacency_list_terminal()
             uint64_t Id = std::stoull(steam_user);
             std::vector<SteamUser> friends = Steam::get_friends(Id);
             adjacency_list.insert_user(Id , friends);
-            heirarchy.push_back(Id);
+            hierarchy.push_back(Id);
         }
         catch (const std::exception& e)
         {
@@ -316,7 +316,7 @@ void adjacency_list_terminal()
             std::vector<std::string> tokens = split_command(command);
             std::string destination = command.substr(command.find(tokens[0]) + tokens[0].size() + 1);
             std::cout <<"\nDestination User ID: " << destination << "\n";
-            uint64_t success = adjacency_list.search(heirarchy[heirarchy.size()-1],destination);
+            uint64_t success = adjacency_list.search(hierarchy[hierarchy.size()-1],destination);
 
             if (success == 0)
             {
@@ -325,11 +325,11 @@ void adjacency_list_terminal()
             else
             {
                 bool found = false;
-                for (size_t i = 0; i < heirarchy.size(); i++)
+                for (size_t i = 0; i < hierarchy.size(); i++)
                 {
-                    if (success == heirarchy[i])
+                    if (success == hierarchy[i])
                     {
-                        heirarchy.erase(heirarchy.begin() + i + 1, heirarchy.end());
+                        hierarchy.erase(hierarchy.begin() + i + 1, hierarchy.end());
                         found = true;
                         std::cout << "\nAllready visited\n";
                     }
@@ -337,7 +337,7 @@ void adjacency_list_terminal()
                 if (!found){
                     std::vector<SteamUser> friends = Steam::get_friends(success);
                     adjacency_list.insert_user(success , friends);
-                    heirarchy.push_back(success);
+                    hierarchy.push_back(success);
 
                 }
             }
@@ -345,7 +345,7 @@ void adjacency_list_terminal()
         else if (code == STATE::LS)
         {
             //command is ls, display the current users friends
-            adjacency_list.display_user_friends(heirarchy[heirarchy.size() - 1]);
+            adjacency_list.display_user_friends(hierarchy[hierarchy.size() - 1]);
 
         }
         else if (code == STATE::AD)
@@ -356,7 +356,7 @@ void adjacency_list_terminal()
         }
         else if (code == STATE::CDOT)
         {
-            heirarchy.pop_back();
+            hierarchy.pop_back();
         }
         else if (code == STATE::TI)
         {
@@ -371,7 +371,7 @@ void adjacency_list_terminal()
         else if (code == STATE::LA)
         {
             //layer deep
-            std::cout <<"\n" << heirarchy.size() << "social circles deep in the social network\n";
+            std::cout <<"\n" << hierarchy.size() << "social circles deep in the social network\n";
         }
     }
 }

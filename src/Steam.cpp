@@ -104,7 +104,7 @@ namespace Steam {
                 continue;
             }
 
-            friends.push_back(SteamUser{ parsed_friend_id, username});
+            friends.push_back(SteamUser{ parsed_friend_id, username });
         }
 
         return friends;
@@ -126,6 +126,7 @@ namespace Steam {
         // return username;
         return "";
     }
+    
     nlohmann::json requestOwnedGames(uint64_t user_id) {
         std::string id = std::to_string(user_id);
         std::string url =  "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=" + API_key + "&steamid=" + id;
@@ -146,18 +147,13 @@ namespace Steam {
                 std::this_thread::sleep_for(std::chrono::seconds(1));
             }
         }
-    return json_response;
+        return json_response;
     }
-
-
-
-
-
 
     //good
     std::vector<std::pair<int,int>> get_users_games(uint64_t user_id) {
-        auto json_response=requestOwnedGames(user_id);
-        auto jsonGames=json_response["response"]["games"];
+        auto json_response = requestOwnedGames(user_id);
+        auto jsonGames = json_response["response"]["games"];
         //std::cout  << jsonGames.dump(2) << std::endl;
         //first val is gameID, second val  is the total hours associate with the game
         std::vector<std::pair<int,int>> gameWhours;
@@ -166,7 +162,7 @@ namespace Steam {
             //std::cout  << gameJson.dump(2) << std::endl;
             int gameID=gameJson["appid"].template get<int>();
             int playtime=gameJson["playtime_forever"].template get<int>();
-            gameWhours.emplace_back(std::make_pair(gameID, playtime));
+            gameWhours.push_back(std::make_pair(gameID, playtime));
         }
 
         //sorted so that the highest played games are first. and it does it based of the second value in the opair
@@ -176,31 +172,31 @@ namespace Steam {
               });
         return gameWhours;
     }
+    
     //gets the categories with most hours spent in
-    std::vector<std::string> getSortedCategories(uint64_t user_id,int amountOfCategories) {
+    std::vector<std::string> getSortedCategories(uint64_t user_id, int amountOfCategories) {
         //Makes certain allGames is initialized
-        if (Game::allGames.size()==0)
+        if (Game::allGames.size() == 0)
         {
             Game::readGameCSV(Game::pathToCSV);
         }
         //cacheable
-        std::vector<std::pair<int,int>> gamesAnHours=get_users_games(user_id);
+        //do a check if user_ids games are already cached, if so return the cached value
+        std::vector<std::pair<int,int>> games_and_hours = get_users_games(user_id);
         std::unordered_map<std::string,int> categoriesTotalMap;
 
-        for (auto game : gamesAnHours)
+        for (auto game : games_and_hours)
         {
-            int id=game.first;
+            int id = game.first;
 
-            if (Game::allGames[id]!=NULL)
+            if (Game::allGames[id] != nullptr)
             {
-                std::vector<std::string> thisGameCat=Game::allGames[id]->getCategories();
+                std::vector<std::string> thisGameCat = Game::allGames[id]->getCategories();
                 for (auto category : thisGameCat)
                 {
                     categoriesTotalMap[category]+=game.second;
                 }
             }
-
-
         }
         //START OF CODE CREATED WITH CLAUDE
         //I didn't wanna figure it out myself okay
@@ -224,30 +220,27 @@ namespace Steam {
         std::vector<std::string> top;
         for (int i=0;i<amountOfCategories && maxHeap.size()>0;i++) {
 
-            top.emplace_back(maxHeap.top().first);
+            top.push_back(maxHeap.top().first);
             maxHeap.pop();
         }
 
         return top;
     }
 
-    std::map<std::string, std::vector<uint64_t>> sortFriendsToCategories(
-        uint64_t user_id, std::vector<std::string> categories)
+    std::map<std::string, std::vector<uint64_t>> sortFriendsToCategories(uint64_t user_id, std::vector<std::string>& categories, const std::vector<SteamUser>& friends)
     {
-        std::map<std::string, std::vector<uint64_t>> sorted;
-        //waste of API we have friends of user already
-        auto friends=get_friends(user_id);
-        for (SteamUser eachFriend:friends)
+        std::map<std::string, std::vector<uint64_t>> sorted = {};
+        for (SteamUser eachFriend : friends)
         {
             //1000 so it gets all the categories for each game b/c there os a max of 1000
-            auto friendsCategories=getSortedCategories(eachFriend.user_id,1000);
+            const int max_amount_of_categories = 1000;
+            auto friendsCategories = getSortedCategories(eachFriend.user_id, max_amount_of_categories);
             //this goes through all the categories from highest to lowest of a friend
-            bool foundCommon=false;
-            for (int i=0;i<friendsCategories.size() && !foundCommon;i++) {
-
-                for (int e=0;e<categories.size();e++) {
-                    if (friendsCategories[i]==categories[e]) {
-                        foundCommon=true;
+            bool foundCommon = false;
+            for (int i = 0; i < friendsCategories.size() && !foundCommon; i++) {
+                for (int e = 0; e < categories.size(); e++) {
+                    if (friendsCategories[i] == categories[e]) {
+                        foundCommon = true;
                         sorted[categories[e]].push_back(eachFriend.user_id);
                     }
                 }
@@ -255,6 +248,4 @@ namespace Steam {
         }
         return sorted;
     }
-
-
 };

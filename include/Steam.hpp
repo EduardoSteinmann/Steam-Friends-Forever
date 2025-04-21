@@ -29,11 +29,7 @@ namespace Steam
     //sorts the categories of auser based off their playtime.
     std::vector<std::string> getSortedCategories(uint64_t user_id,int amountOfCategories);
     //this should return the users split up into the categories of game they play the most that matches this user
-    std::map<std::string, std::vector<uint64_t>> sortFriendsToCategories(
-        uint64_t user_id, std::vector<std::string>);
-
-
-
+    std::map<std::string, std::vector<uint64_t>> sortFriendsToCategories(uint64_t user_id, std::vector<std::string>& categories, const std::vector<SteamUser>& friends);
 
 };
 

@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <unordered_map>
 #include "AdjacencyMatrix.hpp"
+#include "Steam.hpp"
 
 #include <chrono>
 #include <iostream>
@@ -23,6 +24,7 @@ size_t AdjacencyMatrix::insert_user(SteamUser user)
     if(index_graph.find(user.user_id) == index_graph.end())
     {
         index_graph[user.user_id] = std::pair<size_t, std::string>(adj_matrix.size(),user.user_persona);
+        user_graph[adj_matrix.size()] = user.user_id;
         adj_matrix.emplace_back(std::vector<bool>{});
 
         //puts false for edges of newest vertex with rest of the graph
@@ -103,6 +105,22 @@ size_t AdjacencyMatrix::search(size_t user, std::string user_friend)
     }
     return 0;
 }
+
+void AdjacencyMatrix::display_graph()
+{
+    for(size_t i = 0; i < adj_matrix.size(); i++)
+    {
+        std::cout << "-" << index_graph[user_graph[i]].second << std::endl;
+        for(size_t j = 0; j < adj_matrix[i].size(); j++)
+        {
+            if(adj_matrix[i][j] == true)
+            {
+                std::cout << "\t|--" << index_graph[user_graph[j]].second << std::endl;
+            }
+        }
+    }
+}
+
 
 int AdjacencyMatrix::get_insertion_time()
 {
