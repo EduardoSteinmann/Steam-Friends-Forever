@@ -116,6 +116,8 @@ CMakeFiles/Steam-Friends-Forever.dir/src/Steam.cpp.obj: \
  C:/mingw64/include/c++/14.2.0/bits/charconv.h \
  C:/mingw64/include/c++/14.2.0/bits/basic_string.tcc \
  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/SteamUser.hpp \
+ C:/mingw64/include/c++/14.2.0/utility \
+ C:/mingw64/include/c++/14.2.0/bits/stl_relops.h \
  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/curl/curl.h \
  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/curl/curlver.h \
  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/curl/system.h \
@@ -392,6 +394,22 @@ CMakeFiles/Steam-Friends-Forever.dir/src/Steam.cpp.obj: \
  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/curl/header.h \
  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/curl/websockets.h \
  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/curl/mprintf.h \
+ C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/Game.hpp \
+ C:/mingw64/include/c++/14.2.0/map \
+ C:/mingw64/include/c++/14.2.0/bits/stl_tree.h \
+ C:/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
+ C:/mingw64/include/c++/14.2.0/bits/node_handle.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_map.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
+ C:/mingw64/include/c++/14.2.0/bits/erase_if.h \
+ C:/mingw64/include/c++/14.2.0/set \
+ C:/mingw64/include/c++/14.2.0/bits/stl_set.h \
+ C:/mingw64/include/c++/14.2.0/bits/stl_multiset.h \
+ C:/mingw64/include/c++/14.2.0/unordered_map \
+ C:/mingw64/include/c++/14.2.0/bits/unordered_map.h \
+ C:/mingw64/include/c++/14.2.0/bits/hashtable.h \
+ C:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
+ C:/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/SteamUser.hpp \
  C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/json.hpp \
  C:/mingw64/include/c++/14.2.0/algorithm \
@@ -407,14 +425,6 @@ CMakeFiles/Steam-Friends-Forever.dir/src/Steam.cpp.obj: \
  C:/mingw64/include/c++/14.2.0/functional \
  C:/mingw64/include/c++/14.2.0/bits/std_function.h \
  C:/mingw64/include/c++/14.2.0/typeinfo \
- C:/mingw64/include/c++/14.2.0/unordered_map \
- C:/mingw64/include/c++/14.2.0/bits/unordered_map.h \
- C:/mingw64/include/c++/14.2.0/bits/hashtable.h \
- C:/mingw64/include/c++/14.2.0/bits/hashtable_policy.h \
- C:/mingw64/include/c++/14.2.0/ext/aligned_buffer.h \
- C:/mingw64/include/c++/14.2.0/bits/enable_special_members.h \
- C:/mingw64/include/c++/14.2.0/bits/node_handle.h \
- C:/mingw64/include/c++/14.2.0/bits/erase_if.h \
  C:/mingw64/include/c++/14.2.0/array \
  C:/mingw64/include/c++/14.2.0/iterator \
  C:/mingw64/include/c++/14.2.0/bits/stream_iterator.h \
@@ -468,15 +478,9 @@ CMakeFiles/Steam-Friends-Forever.dir/src/Steam.cpp.obj: \
  C:/mingw64/include/c++/14.2.0/backward/auto_ptr.h \
  C:/mingw64/include/c++/14.2.0/bits/ranges_uninitialized.h \
  C:/mingw64/include/c++/14.2.0/pstl/glue_memory_defs.h \
- C:/mingw64/include/c++/14.2.0/utility \
- C:/mingw64/include/c++/14.2.0/bits/stl_relops.h \
  C:/mingw64/include/c++/14.2.0/forward_list \
  C:/mingw64/include/c++/14.2.0/bits/forward_list.h \
  C:/mingw64/include/c++/14.2.0/bits/forward_list.tcc \
- C:/mingw64/include/c++/14.2.0/map \
- C:/mingw64/include/c++/14.2.0/bits/stl_tree.h \
- C:/mingw64/include/c++/14.2.0/bits/stl_map.h \
- C:/mingw64/include/c++/14.2.0/bits/stl_multimap.h \
  C:/mingw64/include/c++/14.2.0/valarray \
  C:/mingw64/include/c++/14.2.0/cmath \
  C:/mingw64/x86_64-w64-mingw32/include/math.h \
@@ -538,4 +542,20 @@ CMakeFiles/Steam-Friends-Forever.dir/src/Steam.cpp.obj: \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/basic_file.h \
  C:/mingw64/include/c++/14.2.0/x86_64-w64-mingw32/bits/c++io.h \
  C:/mingw64/include/c++/14.2.0/bits/fstream.tcc \
- C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/Common.h
+ C:/mingw64/include/c++/14.2.0/queue C:/mingw64/include/c++/14.2.0/deque \
+ C:/mingw64/include/c++/14.2.0/bits/stl_deque.h \
+ C:/mingw64/include/c++/14.2.0/bits/deque.tcc \
+ C:/mingw64/include/c++/14.2.0/bits/stl_queue.h \
+ C:/mingw64/include/c++/14.2.0/thread \
+ C:/mingw64/include/c++/14.2.0/stop_token \
+ C:/mingw64/include/c++/14.2.0/atomic \
+ C:/mingw64/include/c++/14.2.0/bits/std_thread.h \
+ C:/mingw64/include/c++/14.2.0/semaphore \
+ C:/mingw64/include/c++/14.2.0/bits/semaphore_base.h \
+ C:/mingw64/include/c++/14.2.0/bits/atomic_timed_wait.h \
+ C:/mingw64/include/c++/14.2.0/bits/this_thread_sleep.h \
+ C:/mingw64/x86_64-w64-mingw32/include/semaphore.h \
+ C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/Common.h \
+ C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/lib/clay.h \
+ C:/mingw64/lib/gcc/x86_64-w64-mingw32/14.2.0/include/stdbool.h \
+ C:/Users/edwar/UF/COP3530/Steam-Friends-Forever/Steam-Friends-Forever/include/Game.hpp
