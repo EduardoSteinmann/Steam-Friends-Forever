@@ -7,8 +7,6 @@
 #include <utility>
 #include <map>
 
-constexpr size_t NUMBER_OF_MOST_RECENTLY_PLAYED_GAME_CATEGORIES = 4;
-
 struct SteamUser
 {
     uint64_t user_id;

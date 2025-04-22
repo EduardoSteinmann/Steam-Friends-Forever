@@ -31,6 +31,7 @@ namespace Steam
     //this should return the users split up into the categories of game they play the most that matches this user
     std::map<std::string, std::vector<SteamUser>> sortFriendsToCategories(uint64_t user_id, std::vector<std::string>& categories, const std::vector<SteamUser>& friends);
 
+    std::vector<std::pair<uint64_t, std::vector<SteamUser>>> auto_user_generator(size_t amount_of_users);
 };
 
 #endif

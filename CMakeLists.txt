@@ -16,9 +16,7 @@ add_executable(${PROJECT_NAME}
         src/AdjacencyList.cpp
         src/AdjacencyMatrix.cpp
         src/Common.c
-        src/AppDriver.c
         src/Game.cpp
-        include/TerminalDriver.h
         src/TerminalDriver.cpp
         # include/AdjacencyList.hpp   
         # include/AdjacencyMatrix.hpp   

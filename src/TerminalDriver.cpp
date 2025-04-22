@@ -19,7 +19,6 @@
 #define WHITE       "\033[37m"
 #define BOLDWHITE   "\033[1m\033[37m"
 
-
 enum STATE
 {
     LS,
@@ -34,8 +33,15 @@ enum STATE
     HELP,
     INVALID,
     NONE,
+    AUTO,
     ADJMATRIX,
     ADJLIST
+};
+
+enum FRIEND_GENERATION
+{
+    AUTO_GENERATED,
+    USER_GENERATED,
 };
 
 //input to all lower case
@@ -89,10 +95,10 @@ void print_help()
     std::cout << "  ti            - Shows duration of last insertion\n";
     std::cout << "  ts            - Shows duration of last search\n";
     std::cout << "  tg            - Shows top played games and with who\n";
+    std::cout << "  auto <number> - Automatically generate and insert <number> of users and their friends\n";
     std::cout << "  exit          - Exit the CLI tool\n";
     std::cout << "  help          - Show this help message\n";
 }
-
 
 
 //returns a command code if command is known otherwise -1;
@@ -152,12 +158,16 @@ STATE command_handler(std::string command)
         {
             return STATE::LA;
         }
+        if (tokens.at(0) == "auto")
+        {
+            return STATE::AUTO;
+        }
     }
     catch (...)
     {
         return STATE::INVALID;
     }
-
+    return STATE::INVALID;
 }
 
 void adjacency_matrix_terminal()
@@ -183,16 +193,22 @@ void adjacency_matrix_terminal()
         catch (const std::exception& e)
         {
             STATE handled = command_handler(steam_user);
+            if(handled == STATE::AUTO)
+            {
+                std::vector<std::string> tokens = split_command(steam_user);
+                 size_t amount_of_users = std::stoull(tokens[1]);
+                std::vector<std::pair<uint64_t, std::vector<SteamUser>>> generated_users = Steam::auto_user_generator(amount_of_users);
+                for(const auto& user : generated_users)
+                {
+                    adjacency_matrix.insert(user.first, user.second);   
+                }
+                hierarchy.push_back(generated_users[0].first);
+            }
             if (handled == STATE::INVALID)
             {
                 std::cout << "\nInvalid Input\n" << "Steam User Id's Only Include Numbers\n";
                 steam_user = "";
             }
-            else
-            {
-                steam_user = "";
-            }
-
         }
     }
     //while loop for rest of command and app runtime
@@ -202,6 +218,7 @@ void adjacency_matrix_terminal()
         std::cout <<">> ";
         std::getline(std::cin , command);
         STATE code = command_handler(command);
+
         if (code == STATE::INVALID)
         {
             std::cout << "\nInvalid Input\n";
@@ -236,7 +253,6 @@ void adjacency_matrix_terminal()
                     std::vector<SteamUser> friends = Steam::get_friends(success);
                     adjacency_matrix.insert(success , friends);
                     hierarchy.push_back(success);
-
                 }
             }
         }
@@ -255,7 +271,14 @@ void adjacency_matrix_terminal()
         else if (code == STATE::CDOT)
         {
             //comand is cd..
-            hierarchy.pop_back();
+            if(hierarchy.size() == 1)
+            {
+                std::cout << "\nYou are at the root of the social network\n";
+            }
+            else
+            {
+                hierarchy.pop_back();
+            }
         }
         else if (code == STATE::TI)
         {
@@ -284,10 +307,11 @@ void adjacency_list_terminal()
     AdjacencyList adjacency_list;
     std::vector<uint64_t> hierarchy = {};
     std::string steam_user = "";
+    FRIEND_GENERATION generation = FRIEND_GENERATION::USER_GENERATED;
     //while loop for initial person we insert;
     while (steam_user.empty() == true)
     {
-        std::cout <<"\n-Enter Steam User ID \n";
+        std::cout <<"\n-Enter Steam User ID or Enter auto <number> to Generate Graph With <number> users\n";
         std::cout << ">>";
         std::getline(std::cin , steam_user);
         try
@@ -299,18 +323,24 @@ void adjacency_list_terminal()
         }
         catch (const std::exception& e)
         {
-            int handled = command_handler(steam_user);
-            if (handled == -1)
+            STATE handled = command_handler(steam_user);
+            if(handled == STATE::AUTO)
+            {
+                generation = FRIEND_GENERATION::AUTO_GENERATED;
+                std::vector<std::string> tokens = split_command(steam_user);
+                 size_t amount_of_users = std::stoull(tokens[1]);
+                std::vector<std::pair<uint64_t, std::vector<SteamUser>>> generated_users = Steam::auto_user_generator(amount_of_users);
+                for(const auto& user : generated_users)
+                {
+                    adjacency_list.insert_user(user.first, user.second);   
+                }
+                hierarchy.push_back(generated_users[0].first);
+            }
+            if (handled == STATE::INVALID)
             {
                 std::cout << "\nInvalid Input\n" << "Steam User Id's Only Include Numbers\n";
                 steam_user = "";
             }
-            else
-            {
-                std::cout << "\nInvalid Input\n" << "Steam User Id's Only Include Numbers\n";
-                steam_user = "";
-            }
-
         }
     }
     //while loop for rest of command and app runtime
@@ -337,6 +367,11 @@ void adjacency_list_terminal()
             if (success == 0)
             {
                 std::cout << "\nFriends not Found\n";
+            }
+            else if(generation == FRIEND_GENERATION::AUTO_GENERATED)
+            {
+                //if we are in auto generated mode, we can just go to the user
+                hierarchy.push_back(success);
             }
             else
             {
@@ -372,7 +407,14 @@ void adjacency_list_terminal()
         }
         else if (code == STATE::CDOT)
         {
-            hierarchy.pop_back();
+            if(hierarchy.size() == 1)
+            {
+                std::cout << "\nYou are at the root of the social network\n";
+                continue;
+            }
+            else{
+                hierarchy.pop_back();
+            }
         }
         else if (code == STATE::TI)
         {
@@ -417,7 +459,7 @@ STATE get_data_structure()
         }
         return STATE::NONE;
     }
-    catch (std::invalid_argument &e)
+    catch (...)
     {
         choice = to_lower(choice);
 
@@ -437,7 +479,7 @@ STATE get_data_structure()
         {
             return STATE::HELP;
         }
-        std::cout << "\nInvalid Commad\n";
+        std::cout << "\nInvalid Command\n";
         return STATE::INVALID;
     }
 }

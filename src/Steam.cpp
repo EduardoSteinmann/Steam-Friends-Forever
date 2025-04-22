@@ -5,7 +5,7 @@
 #include <vector>
 #include <cstdint>
 #include <fstream>
-//#include <iostream>
+#include <random>
 #include <map>
 #include <queue>
 #include <thread>
@@ -61,7 +61,7 @@ namespace Steam {
         ids.push_back(',');
         response.clear();
         curl_easy_setopt(curl_handle, CURLOPT_URL, url.c_str());
-        auto error = curl_easy_perform(curl_handle);
+        curl_easy_perform(curl_handle);
 
         //sff_debug_printf("\nCURL RETURN CODE: %lld\n", error);
 
@@ -110,25 +110,9 @@ namespace Steam {
         friends[0].game_categories = sortFriendsToCategories(user_id, friends[0].top_game_categories , friends);
         return friends;
     }
-
-    std::string get_username(uint64_t user_id)
-    {
-        // if(usernames.find(user_id) != usernames.end())
-        // {
-        //     return usernames[user_id];
-        // }
-        // std::string ids = std::to_string(user_id);
-        // std::string url =  "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=" + API_key + "&steamid=" + ids;
-        // response.clear();
-        // curl_easy_setopt(curl_handle, CURLOPT_URL, url.c_str());
-        // curl_easy_perform(curl_handle);
-        // nlohmann::json json_response = nlohmann::json::parse(response);
-        // std::string username = json_response["response"]["players"][0]["personaname"];
-        // return username;
-        return "";
-    }
     
-    nlohmann::json requestOwnedGames(uint64_t user_id) {
+    nlohmann::json requestOwnedGames(uint64_t user_id) 
+    {
         std::string id = std::to_string(user_id);
         std::string url =  "http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=" + API_key + "&steamid=" + id;
         nlohmann::json json_response;
@@ -138,12 +122,12 @@ namespace Steam {
             try {
                 response.clear();
                 curl_easy_setopt(curl_handle, CURLOPT_URL, url.c_str());
-                auto error = curl_easy_perform(curl_handle);
+                curl_easy_perform(curl_handle);
 
-                sff_debug_printf("\nCURL RETURN CODE: %lld\n", error);
+                //sff_debug_printf("\nCURL RETURN CODE: %lld\n", error);
                 json_response = nlohmann::json::parse(response);
                 completed=true;
-                }
+            }
             catch (...) {
                 std::this_thread::sleep_for(std::chrono::seconds(1));
             }
@@ -158,7 +142,7 @@ namespace Steam {
         //std::cout  << jsonGames.dump(2) << std::endl;
         //first val is gameID, second val  is the total hours associate with the game
         std::vector<std::pair<int,int>> gameWhours;
-        for (int i=0;i<jsonGames.size();i++) {
+        for (size_t i=0;i<jsonGames.size();i++) {
             auto gameJson=jsonGames[i];
             //std::cout  << gameJson.dump(2) << std::endl;
             int gameID=gameJson["appid"].template get<int>();
@@ -242,8 +226,8 @@ namespace Steam {
 
             //this goes through all the categories from highest to lowest of a friend
             bool foundCommon = false;
-            for (int i = 0; i < eachFriend.top_game_categories.size() && !foundCommon; i++) {
-                for (int e = 0; e < categories.size(); e++) {
+            for (size_t i = 0; i < eachFriend.top_game_categories.size() && !foundCommon; i++) {
+                for (size_t e = 0; e < categories.size(); e++) {
                     if (eachFriend.top_game_categories[i] == categories[e]) {
                         foundCommon = true;
                         sorted[categories[e]].push_back(eachFriend);
@@ -252,5 +236,110 @@ namespace Steam {
             }
         }
         return sorted;
+    }
+
+    SteamUser generate_random_user(std::mt19937& generator, std::uniform_int_distribution<uint64_t>& id_distribution, std::uniform_int_distribution<char>& character_distribution)
+    {
+        constexpr const char* categories[] = 
+        {
+            "PvP",
+            "FPS",
+            "Single Player",
+            "RPG",
+            "Side Scroller"
+        };
+
+        constexpr size_t username_length = 15;
+        std::string random_username = "";
+
+        for (size_t i = 0; i < username_length; i++)
+        {
+            const char random_character = character_distribution(generator);
+            random_username += random_character;
+        }
+
+        uint64_t random_steam_id = id_distribution(generator);
+
+        SteamUser user = SteamUser{ random_steam_id, random_username };
+
+        for (size_t i = 0; i < sizeof(categories) / sizeof(categories[0]); i++)
+        {
+            user.top_game_categories.emplace_back(categories[i]);
+        }
+
+        return user;
+    }
+
+    std::vector<std::pair<uint64_t, std::vector<SteamUser>>> auto_user_generator(size_t amount_of_users)
+    {
+        //what we need:
+        //id generator
+        //game generator {FPS, RPG, Adventure, VR, etc.}
+        //username generator
+        //steps:
+        //generate user
+        //generate friend list
+        std::vector<std::pair<uint64_t, std::vector<SteamUser>>> users = {};
+        constexpr const char* game_names[] = 
+        {
+            "Risk of Rain",
+            "Marvel Rivals",
+            "Dark Souls",
+            "GTA V",
+            "Mario"
+        };
+        uint64_t steam_id_lower_range = 70000000000000000;
+        uint64_t steam_id_upper_range = 80000009999999999;
+
+        char valid_ascii_lower_bound = '@';
+        char valid_ascii_upper_bound = 'Z';
+        constexpr size_t friend_amount = 15;
+
+        std::mt19937 generator(std::random_device{}());
+        std::uniform_int_distribution<uint64_t> id_distribution(steam_id_lower_range, steam_id_upper_range);
+        std::uniform_int_distribution<char> character_distribution(valid_ascii_lower_bound, valid_ascii_upper_bound);
+        SteamUser previous;
+
+        SteamUser parent = generate_random_user(generator, id_distribution, character_distribution);
+        std::vector<SteamUser> friends = { parent };
+
+        for (size_t i = 0; i < friend_amount; i++)
+        {
+            SteamUser friend_user = generate_random_user(generator, id_distribution, character_distribution);
+            friends.push_back(friend_user);
+        }
+
+        for (size_t j = 0; j < sizeof(game_names) / sizeof(game_names[0]); j++)
+        {
+            parent.game_categories[game_names[j]].push_back(friends[j + 1]);
+        }
+        
+        users.push_back({ parent.user_id, friends });
+        size_t parent_index = 0;
+        while (users.size() < amount_of_users)
+        {
+            for(size_t i = 1; i < users[parent_index].second.size(); i++)
+            {
+                SteamUser new_parent = users[parent_index].second[i];
+                std::vector<SteamUser> friends = { new_parent, users[parent_index].second[0] }; 
+                for (size_t i = 0; i < friend_amount - 1; i++)
+                {
+                    SteamUser friend_user = generate_random_user(generator, id_distribution, character_distribution);
+                    friends.push_back(friend_user);
+                }
+                for (size_t j = 0; j < sizeof(game_names) / sizeof(game_names[0]); j++)
+                {
+                    new_parent.game_categories[game_names[j]].push_back(friends[j + 1]);
+                }
+                users.push_back({ new_parent.user_id, friends });
+                if (users.size() >= amount_of_users)
+                {
+                    return users;
+                }
+            }
+            parent_index++;
+        }
+
+        return users;
     }
 };

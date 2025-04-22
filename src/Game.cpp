@@ -58,7 +58,7 @@ namespace Game{
         // }
         int totalGames = names.size();
 
-        int interval = totalGames/10;
+        //int interval = totalGames/10;
         for (int i = 0; i < totalGames; ++i) {
             int id = stoi(appIDs[i]);
 

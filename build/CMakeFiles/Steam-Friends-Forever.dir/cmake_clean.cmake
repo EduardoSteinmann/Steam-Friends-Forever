@@ -3,8 +3,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyList.cpp.obj.d"
   "CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyMatrix.cpp.obj"
   "CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyMatrix.cpp.obj.d"
-  "CMakeFiles/Steam-Friends-Forever.dir/src/AppDriver.c.obj"
-  "CMakeFiles/Steam-Friends-Forever.dir/src/AppDriver.c.obj.d"
   "CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.obj"
   "CMakeFiles/Steam-Friends-Forever.dir/src/Common.c.obj.d"
   "CMakeFiles/Steam-Friends-Forever.dir/src/Game.cpp.obj"

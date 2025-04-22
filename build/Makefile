@@ -176,30 +176,6 @@ src/AdjacencyMatrix.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/AdjacencyMatrix.cpp.s
 .PHONY : src/AdjacencyMatrix.cpp.s
 
-src/AppDriver.obj: src/AppDriver.c.obj
-.PHONY : src/AppDriver.obj
-
-# target to build an object file
-src/AppDriver.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/AppDriver.c.obj
-.PHONY : src/AppDriver.c.obj
-
-src/AppDriver.i: src/AppDriver.c.i
-.PHONY : src/AppDriver.i
-
-# target to preprocess a source file
-src/AppDriver.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/AppDriver.c.i
-.PHONY : src/AppDriver.c.i
-
-src/AppDriver.s: src/AppDriver.c.s
-.PHONY : src/AppDriver.s
-
-# target to generate assembly for a file
-src/AppDriver.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Steam-Friends-Forever.dir\build.make CMakeFiles/Steam-Friends-Forever.dir/src/AppDriver.c.s
-.PHONY : src/AppDriver.c.s
-
 src/Common.obj: src/Common.c.obj
 .PHONY : src/Common.obj
 
@@ -335,9 +311,6 @@ help:
 	@echo ... src/AdjacencyMatrix.obj
 	@echo ... src/AdjacencyMatrix.i
 	@echo ... src/AdjacencyMatrix.s
-	@echo ... src/AppDriver.obj
-	@echo ... src/AppDriver.i
-	@echo ... src/AppDriver.s
 	@echo ... src/Common.obj
 	@echo ... src/Common.i
 	@echo ... src/Common.s
