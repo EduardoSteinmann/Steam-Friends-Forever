@@ -106,7 +106,8 @@ namespace Steam {
 
             friends.push_back(SteamUser{ parsed_friend_id, username });
         }
-
+        friends[0].top_game_categories = getSortedCategories(user_id , 1000);
+        friends[0].game_categories = sortFriendsToCategories(user_id, friends[0].top_game_categories , friends);
         return friends;
     }
 
@@ -227,21 +228,25 @@ namespace Steam {
         return top;
     }
 
-    std::map<std::string, std::vector<uint64_t>> sortFriendsToCategories(uint64_t user_id, std::vector<std::string>& categories, const std::vector<SteamUser>& friends)
+    std::map<std::string, std::vector<SteamUser>> sortFriendsToCategories(uint64_t user_id, std::vector<std::string>& categories, const std::vector<SteamUser>& friends)
     {
-        std::map<std::string, std::vector<uint64_t>> sorted = {};
+        std::map<std::string, std::vector<SteamUser>> sorted = {};
         for (SteamUser eachFriend : friends)
         {
             //1000 so it gets all the categories for each game b/c there os a max of 1000
             const int max_amount_of_categories = 1000;
-            auto friendsCategories = getSortedCategories(eachFriend.user_id, max_amount_of_categories);
+            if (eachFriend.top_game_categories.size() == 0)
+            {
+                eachFriend.top_game_categories = getSortedCategories(eachFriend.user_id, max_amount_of_categories);
+            }
+
             //this goes through all the categories from highest to lowest of a friend
             bool foundCommon = false;
-            for (int i = 0; i < friendsCategories.size() && !foundCommon; i++) {
+            for (int i = 0; i < eachFriend.top_game_categories.size() && !foundCommon; i++) {
                 for (int e = 0; e < categories.size(); e++) {
-                    if (friendsCategories[i] == categories[e]) {
+                    if (eachFriend.top_game_categories[i] == categories[e]) {
                         foundCommon = true;
-                        sorted[categories[e]].push_back(eachFriend.user_id);
+                        sorted[categories[e]].push_back(eachFriend);
                     }
                 }
             }

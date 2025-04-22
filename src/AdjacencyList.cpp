@@ -46,23 +46,33 @@ void AdjacencyList::display_user_friends(uint64_t user_id)
         std::cout << "User " << user_id << " does not exist" << std::endl;
         return;
     }
-
-    auto categories = Steam::getSortedCategories(user_id, 4);
-    auto friends = this->get_friends(user_id);
-
-    auto categoriesWithFriends = Steam::sortFriendsToCategories(user_id, categories, friends);
-
+    std::vector<SteamUser> friends = graph[user_id];
     std::cout << "-" << friends[0].user_persona << std::endl;
-    for (auto eachCategorty: categoriesWithFriends)
+
+    for (size_t i = 1; i < friends.size(); i++)
     {
-        std::cout << eachCategorty.first << std::endl;
-        for (size_t i = 1; i < eachCategorty.second.size(); i++)
+        std::cout << "\t|" << "--"  << friends[i].user_persona << std::endl;
+    }
+}
+
+void AdjacencyList::display_top_games(uint64_t user_id)
+{
+    if (graph.find(user_id) == graph.end())
+    {
+        std::cout << "User " << user_id << " does not exist" << std::endl;
+        return;
+    }
+    std::vector<SteamUser> friends = graph[user_id];
+    std::cout << "-" << friends[0].user_persona << std::endl;
+    for (auto element : friends[0].game_categories)
+    {
+        std::cout << "\t|-" << element.first << std::endl;
+        for (auto fren : element.second)
         {
-            //this gets the set of friend at index i from the category, and the first value of the set should be itself
-            SteamUser theFriend=graph[eachCategorty.second[i]][0];
-            std::cout << "\t|" << "--"  << theFriend.user_persona << std::endl;
+            std::cout << "\t\t|--" << fren.user_persona << std::endl;
         }
     }
+
 }
 
 uint64_t AdjacencyList::search(uint64_t user_id, std::string friend_id)

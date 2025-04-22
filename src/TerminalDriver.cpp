@@ -27,6 +27,7 @@ enum STATE
     CD,
     TI,
     TS,
+    TG,
     AD,
     LA,
     EXIT,
@@ -87,6 +88,7 @@ void print_help()
     std::cout << "  ad            - Show all directories recursively\n";
     std::cout << "  ti            - Shows duration of last insertion\n";
     std::cout << "  ts            - Shows duration of last search\n";
+    std::cout << "  tg            - Shows top played games and with who\n";
     std::cout << "  exit          - Exit the CLI tool\n";
     std::cout << "  help          - Show this help message\n";
 }
@@ -99,52 +101,63 @@ STATE command_handler(std::string command)
     command = trim(command);
     command = to_lower(command);
     std::vector<std::string> tokens = split_command(command);
-    if (tokens[0] == "exit")
+    try
     {
-        exit(0);
-    }
-    if (tokens[0] == "help")
-    {
-        print_help();
-        return STATE::HELP;
-    }
-    if (tokens[0] == "cd")
-    {
-        try {
-            if (tokens.at(1) == "..") {
-                return STATE::CDOT;
-            }
-        } catch (std::out_of_range& e) {
-            return STATE::INVALID;
+        if (tokens.at(0) == "exit")
+        {
+            exit(0);
         }
+        if (tokens.at(0) == "help")
+        {
+            print_help();
+            return STATE::HELP;
+        }
+        if (tokens.at(0) == "cd")
+        {
+            try {
+                if (tokens.at(1) == "..") {
+                    return STATE::CDOT;
+                }
+            } catch (std::out_of_range& e) {
+                return STATE::INVALID;
+            }
 
-        return STATE::CD;
+            return STATE::CD;
+        }
+        if (tokens.at(0) == "ls")
+        {
+            return STATE::LS;
+        }
+        if (tokens.at(0) == "ad")
+        {
+            return STATE::AD;
+        }
+        if (tokens.at(0) == "cd..")
+        {
+            return STATE::CDOT;
+        }
+        if (tokens.at(0) == "ti")
+        {
+            return STATE::TI;
+        }
+        if (tokens.at(0) == "ts")
+        {
+            return STATE::TS;
+        }
+        if (tokens.at(0) == "tg")
+        {
+            return STATE::TG;
+        }
+        if (tokens.at(0) == "la")
+        {
+            return STATE::LA;
+        }
     }
-    if (tokens[0] == "ls")
+    catch (...)
     {
-        return STATE::LS;
+        return STATE::INVALID;
     }
-    if (tokens[0] == "ad")
-    {
-        return STATE::AD;
-    }
-    if (tokens[0] == "cd..")
-    {
-        return STATE::CDOT;
-    }
-    if (tokens[0] == "ti")
-    {
-        return STATE::TI;
-    }
-    if (tokens[0] == "ts")
-    {
-        return STATE::TS;
-    }
-    if (tokens[0] == "la")
-    {
-        return STATE::LA;
-    }
-    return STATE::INVALID;
+
 }
 
 void adjacency_matrix_terminal()
@@ -201,7 +214,6 @@ void adjacency_matrix_terminal()
             std::vector<std::string> tokens = split_command(command);
             std::string destination = command.substr(command.find(tokens[0]) + tokens[0].size() + 1);
             std::cout <<"\nDestination User ID: " << destination << "\n";
-            //TODO FIX
             uint64_t success = adjacency_matrix.search(hierarchy[hierarchy.size()-1],destination);
 
             if (success == 0)
@@ -217,7 +229,7 @@ void adjacency_matrix_terminal()
                     {
                         hierarchy.erase(hierarchy.begin() + i + 1, hierarchy.end());
                         found = true;
-                        std::cout << "\nAllready visited\n";
+                        std::cout << "\nAlready visited\n";
                     }
                 }
                 if (!found){
@@ -237,7 +249,7 @@ void adjacency_matrix_terminal()
         else if (code == STATE::AD)
         {
             //command is ad display the whole graph
-            //adjacency_matrix.display_graph();
+            adjacency_matrix.display_graph();
 
         }
         else if (code == STATE::CDOT)
@@ -254,6 +266,10 @@ void adjacency_matrix_terminal()
         {
             //time of search
             std::cout << "\nLast Search Duration: " << adjacency_matrix.get_search_time() << "ns\n";
+        }
+        else if (code == STATE::TG)
+        {
+            adjacency_matrix.display_top_games(hierarchy[hierarchy.size() - 1]);
         }
         else if (code == STATE::LA)
         {
@@ -372,6 +388,10 @@ void adjacency_list_terminal()
         {
             //layer deep
             std::cout <<"\n" << hierarchy.size() << "social circles deep in the social network\n";
+        }
+        else if (code == STATE::TG)
+        {
+            adjacency_list.display_top_games(hierarchy[hierarchy.size() - 1]);
         }
     }
 }

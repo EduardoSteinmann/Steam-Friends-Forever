@@ -13,6 +13,7 @@ void AdjacencyMatrix::insert(uint64_t user_id, std::vector<SteamUser> friends)
     auto start = std::chrono::high_resolution_clock::now();
     //inserting user
     insert_user(friends[0]);
+    this->fully_inserted_users.push_back(friends[0]);
     //inserting friends of user
     insert_user_friends(friends, user_id);
     auto end = std::chrono::high_resolution_clock::now();
@@ -108,19 +109,41 @@ size_t AdjacencyMatrix::search(size_t user, std::string user_friend)
 
 void AdjacencyMatrix::display_graph()
 {
-    for(size_t i = 0; i < adj_matrix.size(); i++)
+    for (auto element : this->fully_inserted_users)
     {
-        std::cout << "-" << index_graph[user_graph[i]].second << std::endl;
-        for(size_t j = 0; j < adj_matrix[i].size(); j++)
+        size_t index = index_graph[element.user_id].first;
+        std::cout << "-" << index_graph[element.user_id].second << std::endl;
+        for (size_t i = 0; i < adj_matrix[index].size(); i++)
         {
-            if(adj_matrix[i][j] == true)
+            if (adj_matrix[index][i] == true)
             {
-                std::cout << "\t|--" << index_graph[user_graph[j]].second << std::endl;
+                std::cout << "\t|" << "--" << index_graph[user_graph[i]].second << std::endl;
             }
         }
     }
 }
 
+void AdjacencyMatrix::display_top_games(uint64_t user_id)
+{
+    SteamUser user;
+    std::cout << "-" << index_graph[user_id].second << std::endl;
+    for (size_t i = 0; i < fully_inserted_users.size(); i++)
+    {
+        if (user_id == fully_inserted_users[i].user_id)
+        {
+            user = fully_inserted_users[i];
+            break;
+        }
+    }
+    for (auto element : user.game_categories)
+    {
+        std::cout << "\t|--" << element.first << std::endl;
+        for (auto fren : element.second)
+        {
+            std::cout << "\t\t|--" << fren.user_persona << std::endl;
+        }
+    }
+}
 
 int AdjacencyMatrix::get_insertion_time()
 {
