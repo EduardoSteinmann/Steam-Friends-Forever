@@ -23,7 +23,6 @@ namespace Game {
         int getId();
 
     };
-    //inline std::vector<auto> all_games;
 
     void readGameCSV(std::string path);
 

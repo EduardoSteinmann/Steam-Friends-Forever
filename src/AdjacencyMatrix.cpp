@@ -55,8 +55,6 @@ void AdjacencyMatrix::insert_user_friends(std::vector<SteamUser>& friends , uint
     }
 }
 
-
-//TODO FIND BETTER ALGO FOR FINDING FRIEND NAME
 void AdjacencyMatrix::display_user_friends(uint64_t user_id)
 {
     if(index_graph.find(user_id) == index_graph.end())
@@ -80,8 +78,6 @@ void AdjacencyMatrix::display_user_friends(uint64_t user_id)
         }
     }
 }
-
-
 
 size_t AdjacencyMatrix::search(size_t user, std::string user_friend)
 {
@@ -155,6 +151,7 @@ int AdjacencyMatrix::get_insertion_time()
 {
     return this->insertion_time;
 }
+
 int AdjacencyMatrix::get_search_time()
 {
     return this->search_time;

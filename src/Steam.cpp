@@ -52,7 +52,6 @@ namespace Steam {
         return CURLE_OK;
     }
 
-
     std::vector<SteamUser> get_friends(uint64_t user_id)
     {
         std::vector<SteamUser> friends = {};
@@ -62,10 +61,6 @@ namespace Steam {
         response.clear();
         curl_easy_setopt(curl_handle, CURLOPT_URL, url.c_str());
         curl_easy_perform(curl_handle);
-
-        //sff_debug_printf("\nCURL RETURN CODE: %lld\n", error);
-
-        //friends.push_back(SteamUser{ user_id });
 
         nlohmann::json json_response = nlohmann::json::parse(response);
 
@@ -84,11 +79,7 @@ namespace Steam {
         curl_easy_setopt(curl_handle, CURLOPT_URL, url.c_str());
         curl_easy_perform(curl_handle);
 
-        //sff_debug_printf("\n----------------\n");
-        //sff_debug_printf("\nSTEAM API RESPONSE: %s\n", response.c_str());
-
         json_response = nlohmann::json::parse(response);
-        //std::cout  << json_response.dump(4) << std::endl;
 
         for (size_t i = 0; i < json_response["response"]["players"].size(); i++)
         {
@@ -124,7 +115,6 @@ namespace Steam {
                 curl_easy_setopt(curl_handle, CURLOPT_URL, url.c_str());
                 curl_easy_perform(curl_handle);
 
-                //sff_debug_printf("\nCURL RETURN CODE: %lld\n", error);
                 json_response = nlohmann::json::parse(response);
                 completed=true;
             }
@@ -135,16 +125,15 @@ namespace Steam {
         return json_response;
     }
 
-    //good
     std::vector<std::pair<int,int>> get_users_games(uint64_t user_id) {
         auto json_response = requestOwnedGames(user_id);
         auto jsonGames = json_response["response"]["games"];
-        //std::cout  << jsonGames.dump(2) << std::endl;
+
         //first val is gameID, second val  is the total hours associate with the game
         std::vector<std::pair<int,int>> gameWhours;
         for (size_t i=0;i<jsonGames.size();i++) {
             auto gameJson=jsonGames[i];
-            //std::cout  << gameJson.dump(2) << std::endl;
+
             int gameID=gameJson["appid"].template get<int>();
             int playtime=gameJson["playtime_forever"].template get<int>();
             gameWhours.push_back(std::make_pair(gameID, playtime));
@@ -165,8 +154,7 @@ namespace Steam {
         {
             Game::readGameCSV(Game::pathToCSV);
         }
-        //cacheable
-        //do a check if user_ids games are already cached, if so return the cached value
+
         std::vector<std::pair<int,int>> games_and_hours = get_users_games(user_id);
         std::unordered_map<std::string,int> categoriesTotalMap;
 
@@ -183,9 +171,7 @@ namespace Steam {
                 }
             }
         }
-        //START OF CODE CREATED WITH CLAUDE
-        //I didn't wanna figure it out myself okay
-        // This inserts pairs by their second element (the int value)
+
         std::priority_queue<
             std::pair<std::string, int>,
             std::vector<std::pair<std::string, int>>,
@@ -200,7 +186,6 @@ namespace Steam {
         for (const auto& [category, count] : categoriesTotalMap) {
             maxHeap.push({category, count});
         }
-        //END OF CODE CREATED WITH CLAUDE
 
         std::vector<std::string> top;
         for (int i=0;i<amountOfCategories && maxHeap.size()>0;i++) {
@@ -334,10 +319,6 @@ namespace Steam {
                 }
                 new_friends[0] = new_parent;
                 users.emplace_back(new_parent.user_id, new_friends);
-                // if (users.size() >= amount_of_users)
-                // {
-                //     return users;
-                // }
             }
             parent_index++;
         }

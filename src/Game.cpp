@@ -6,7 +6,6 @@
 #include <string>
 #include "rapidcsv.h"
 
-
 //
 // Created by wlbra on 3/23/2025.
 //
@@ -42,23 +41,11 @@ namespace Game{
         std::vector<std::string> names = doc.GetColumn<std::string>("Name");
         std::cout <<"Names Read"<<std::endl;
 
-        //std::vector<std::string> categories = doc.GetColumn<std::string>("Categories");
-        //std::vector<std::string> genres = doc.GetColumn<std::string>("Genres");
-        //I think the library is off somehow, b/c I think tags and genres are swapped
-        //std::vector<std::string> tags = doc.GetColumn<std::string>("Tags");
-        //They fucked it up and somehow the screenshot column is actually tags of the game
         std::vector<std::string> tags = doc.GetColumn<std::string>("Screenshots");
 
         std::cout <<"Tags Read"<<std::endl;
 
-        //
-        // auto columns= doc.GetColumnNames();
-        // for (int i = 0; i < columns.size(); ++i) {
-        //     std::cout << columns[i] << std::endl;
-        // }
         int totalGames = names.size();
-
-        //int interval = totalGames/10;
         for (int i = 0; i < totalGames; ++i) {
             int id = stoi(appIDs[i]);
 

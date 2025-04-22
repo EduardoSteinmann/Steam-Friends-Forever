@@ -10,18 +10,10 @@
 
 namespace Steam
 {
-    //the int is the appID, second is the link to the corresponding game.
-
-
-
     CURLcode init();
     void deinit();
     void read_API_key();
     std::vector<SteamUser> get_friends(uint64_t user_id);
-    std::string get_username(uint64_t user_id);
-
-    void requestAPI();
-
 
     //Returns of a vector of first the appID associated with a game
     //and then amount of hours a user has playeed in that game

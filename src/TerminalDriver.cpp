@@ -179,7 +179,6 @@ void adjacency_matrix_terminal()
     //while loop for initial person we insert;
     while (steam_user.empty() == true)
     {
-
         std::cout <<"\n-Enter Steam User ID or Enter auto <number> to Generate Graph With <number> users\n";
         std::cout << ">>";
         std::getline(std::cin , steam_user);
@@ -267,13 +266,11 @@ void adjacency_matrix_terminal()
         {
             //command is ls, display the current users friends
             adjacency_matrix.display_user_friends(hierarchy[hierarchy.size() - 1]);
-
         }
         else if (code == STATE::AD)
         {
-            //command is ad display the whole graph
+            //command is and display the whole graph
             adjacency_matrix.display_graph();
-
         }
         else if (code == STATE::CDOT)
         {
