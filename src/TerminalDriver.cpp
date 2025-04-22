@@ -175,34 +175,37 @@ void adjacency_matrix_terminal()
     AdjacencyMatrix adjacency_matrix;
     std::vector<uint64_t> hierarchy = {};
     std::string steam_user = "";
+    FRIEND_GENERATION generation = FRIEND_GENERATION::USER_GENERATED;
     //while loop for initial person we insert;
     while (steam_user.empty() == true)
     {
 
-        std::cout <<"\n-Enter Steam User ID \n";
+        std::cout <<"\n-Enter Steam User ID or Enter auto <number> to Generate Graph With <number> users\n";
         std::cout << ">>";
         std::getline(std::cin , steam_user);
         try
         {
             uint64_t Id = std::stoull(steam_user);
             std::vector<SteamUser> friends = Steam::get_friends(Id);
-            //TODO FIX
             adjacency_matrix.insert(Id , friends);
             hierarchy.push_back(Id);
+            std::cout << "\n Users Data Inserted\n";
         }
         catch (const std::exception& e)
         {
             STATE handled = command_handler(steam_user);
             if(handled == STATE::AUTO)
             {
+                generation = FRIEND_GENERATION::AUTO_GENERATED;
                 std::vector<std::string> tokens = split_command(steam_user);
-                 size_t amount_of_users = std::stoull(tokens[1]);
+                size_t amount_of_users = std::stoull(tokens[1]);
                 std::vector<std::pair<uint64_t, std::vector<SteamUser>>> generated_users = Steam::auto_user_generator(amount_of_users);
                 for(const auto& user : generated_users)
                 {
                     adjacency_matrix.insert(user.first, user.second);   
                 }
                 hierarchy.push_back(generated_users[0].first);
+                std::cout << "\nSocial Network Auto Generated\n";
             }
             if (handled == STATE::INVALID)
             {
@@ -249,9 +252,13 @@ void adjacency_matrix_terminal()
                         std::cout << "\nAlready visited\n";
                     }
                 }
-                if (!found){
+                if (!found && generation == FRIEND_GENERATION::USER_GENERATED){
                     std::vector<SteamUser> friends = Steam::get_friends(success);
                     adjacency_matrix.insert(success , friends);
+                    hierarchy.push_back(success);
+                }
+                else
+                {
                     hierarchy.push_back(success);
                 }
             }
@@ -320,6 +327,7 @@ void adjacency_list_terminal()
             std::vector<SteamUser> friends = Steam::get_friends(Id);
             adjacency_list.insert_user(Id , friends);
             hierarchy.push_back(Id);
+            std::cout << "\n Users Data Inserted\n";
         }
         catch (const std::exception& e)
         {
@@ -335,6 +343,7 @@ void adjacency_list_terminal()
                     adjacency_list.insert_user(user.first, user.second);   
                 }
                 hierarchy.push_back(generated_users[0].first);
+                std::cout << "\nSocial Network Auto Generated\n";
             }
             if (handled == STATE::INVALID)
             {
@@ -368,11 +377,6 @@ void adjacency_list_terminal()
             {
                 std::cout << "\nFriends not Found\n";
             }
-            else if(generation == FRIEND_GENERATION::AUTO_GENERATED)
-            {
-                //if we are in auto generated mode, we can just go to the user
-                hierarchy.push_back(success);
-            }
             else
             {
                 bool found = false;
@@ -385,11 +389,15 @@ void adjacency_list_terminal()
                         std::cout << "\nAllready visited\n";
                     }
                 }
-                if (!found){
+                if (!found && generation == FRIEND_GENERATION::USER_GENERATED){
                     std::vector<SteamUser> friends = Steam::get_friends(success);
                     adjacency_list.insert_user(success , friends);
                     hierarchy.push_back(success);
 
+                }
+                else
+                {
+                    hierarchy.push_back(success);
                 }
             }
         }

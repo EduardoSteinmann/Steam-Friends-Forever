@@ -313,29 +313,31 @@ namespace Steam {
         {
             parent.game_categories[game_names[j]].push_back(friends[j + 1]);
         }
-        
-        users.push_back({ parent.user_id, friends });
+        friends[0] = parent;
+        users.emplace_back( parent.user_id, friends );
         size_t parent_index = 0;
         while (users.size() < amount_of_users)
         {
-            for(size_t i = 1; i < users[parent_index].second.size(); i++)
+            for(size_t i = 2; i < users[parent_index].second.size(); i++)
             {
                 SteamUser new_parent = users[parent_index].second[i];
-                std::vector<SteamUser> friends = { new_parent, users[parent_index].second[0] }; 
-                for (size_t i = 0; i < friend_amount - 1; i++)
+                std::vector<SteamUser> new_friends = { new_parent};
+                new_friends.push_back(users[parent_index].second[0]);
+                for (size_t j = 0; j < friend_amount - 1; j++)
                 {
                     SteamUser friend_user = generate_random_user(generator, id_distribution, character_distribution);
-                    friends.push_back(friend_user);
+                    new_friends.push_back(friend_user);
                 }
                 for (size_t j = 0; j < sizeof(game_names) / sizeof(game_names[0]); j++)
                 {
-                    new_parent.game_categories[game_names[j]].push_back(friends[j + 1]);
+                    new_parent.game_categories[game_names[j]].push_back(new_friends[j + 1]);
                 }
-                users.push_back({ new_parent.user_id, friends });
-                if (users.size() >= amount_of_users)
-                {
-                    return users;
-                }
+                new_friends[0] = new_parent;
+                users.emplace_back(new_parent.user_id, new_friends);
+                // if (users.size() >= amount_of_users)
+                // {
+                //     return users;
+                // }
             }
             parent_index++;
         }

@@ -43,7 +43,7 @@ void AdjacencyList::display_user_friends(uint64_t user_id)
 {
     if (graph.find(user_id) == graph.end())
     {
-        std::cout << "User " << user_id << " does not exist" << std::endl;
+        std::cout << "\nUsers data not yet inserted into graph\n" << std::endl;
         return;
     }
     std::vector<SteamUser> friends = graph[user_id];
@@ -102,10 +102,18 @@ uint64_t AdjacencyList::search(uint64_t user_id, std::string friend_id)
 
 void AdjacencyList::display_graph()
 {
+    int MAX_DISPLAY_NUMBER = 50;
+
     for (auto element : graph)
     {
+        if (MAX_DISPLAY_NUMBER <= 0)
+        {
+            return;
+        }
         display_user_friends(element.first);
+        MAX_DISPLAY_NUMBER--;
     }
+
 }
 
 int AdjacencyList::get_insertion_time()

@@ -61,7 +61,7 @@ void AdjacencyMatrix::display_user_friends(uint64_t user_id)
 {
     if(index_graph.find(user_id) == index_graph.end())
     {
-        std::cout << "User " << user_id << " does not exist" << std::endl;
+        std::cout << "\nUsers data not yet inserted into graph\n" << std::endl;
         return;
     }
     size_t user_index = index_graph[user_id].first;
@@ -109,8 +109,13 @@ size_t AdjacencyMatrix::search(size_t user, std::string user_friend)
 
 void AdjacencyMatrix::display_graph()
 {
+    int MAX_DISPLAY_NUMBER = 50;
     for (auto element : this->fully_inserted_users)
     {
+        if (MAX_DISPLAY_NUMBER <= 0)
+        {
+            return;
+        }
         size_t index = index_graph[element.user_id].first;
         std::cout << "-" << index_graph[element.user_id].second << std::endl;
         for (size_t i = 0; i < adj_matrix[index].size(); i++)
@@ -120,6 +125,7 @@ void AdjacencyMatrix::display_graph()
                 std::cout << "\t|" << "--" << index_graph[user_graph[i]].second << std::endl;
             }
         }
+        MAX_DISPLAY_NUMBER--;
     }
 }
 
